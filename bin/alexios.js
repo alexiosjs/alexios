@@ -2,4 +2,4 @@
 
 require("../src/babel");
 
-require("../src/alexios");
+require("../lib/core/alexios");
