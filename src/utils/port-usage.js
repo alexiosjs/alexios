@@ -1,34 +1,26 @@
-import net from "net";
 import chalk from "chalk";
+import fp from "./find-free-port";
 
-function portUsage(port) {
-  let EMPTY_PORT = port;
-
-  const server = net.createServer().listen(EMPTY_PORT);
-
-  return new Promise((resolve, reject) => {
-    server.on("listening", () => {
-      server.close();
-      resolve(EMPTY_PORT);
-    });
-
-    server.on("error", (err) => {
-      if (err.code === "EADDRINUSE") {
-        // 端口占用，加1重试
-        console.log(
-          chalk.yellow(
-            `The port ${EMPTY_PORT} is occupied, retrying on port ${
-              EMPTY_PORT + 1
-            }...\n`
-          )
-        );
-        resolve(portUsage(EMPTY_PORT + 1));
-      } else {
-        // 异常
-        reject(err);
-      }
-    });
+const portUsage = port => {
+  return new Promise(resolve => {
+    fp(port)
+      .then(([free_port]) => {
+        if (free_port !== port) {
+          const text =
+            free_port - port <= 1 ? `${port}` : `${port} - ${free_port - 1}`;
+          console.log(
+            chalk.yellow(
+              `Port [${text}] is occupied, switching to port [${free_port}]...\n`
+            )
+          );
+        }
+        resolve(free_port);
+      })
+      .catch(err => {
+        console.log(err);
+        process.exit(0);
+      });
   });
-}
+};
 
 export default portUsage;
