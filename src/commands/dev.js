@@ -1,6 +1,7 @@
 import chalk from "chalk";
 import defaultSetting from "../config/default-setting";
 import portUsage from "../utils/port-usage";
+import { webpackDev } from "../webpack/main";
 import webpack from "webpack";
 
 /**
@@ -29,7 +30,19 @@ const portCheck = async port => {
 };
 
 export default async argv => {
-  const { port = defaultSetting.PORT } = argv;
+  const {
+    /** 端口号 */
+    port = defaultSetting.PORT,
+    /** 是否打开浏览器 */
+    open = defaultSetting.OPEN,
+  } = argv;
+
   const EMPTY_PORT = await portCheck(port);
-  webpack();
+
+  const webpackDevConfig = webpackDev({
+    port: Number(port),
+    open: open === "true",
+  });
+
+  // webpack();
 };
