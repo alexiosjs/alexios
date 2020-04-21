@@ -31,7 +31,8 @@ Alexios is a cli that allows you to quickly start a react project with the minim
 // Echo in src/index.js
 import ReactDOM from "react-dom";
 
-const App = () => <>App</> ReactDOM.render(App, document.getElementById("root"))
+const App = () => <>App</>;
+ReactDOM.render(App, document.getElementById("root"));
 ```
 
 ```bash

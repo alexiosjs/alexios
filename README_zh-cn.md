@@ -31,7 +31,8 @@ Alexios 是一个使用最小的成本快速开始一个 react 项目的脚手�
 // 写入 src/index.js
 import ReactDOM from "react-dom";
 
-const App = () => <>App</> ReactDOM.render(App, document.getElementById("root"))
+const App = () => <>App</>;
+ReactDOM.render(App, document.getElementById("root"));
 ```
 
 ```bash
