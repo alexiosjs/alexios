@@ -2,7 +2,7 @@
 
 [查看英文版](./README.md)
 
-Alexios 是一个使用最小的成本快速开始一个 react 项目的脚手架，几乎零配置，基于 webpack 4 和 babel 7，解决了 create-react-app 无法定制化等缺点。
+Alexios 是一个使用最小的成本快速开始一个 React 项目的脚手架，几乎零配置，基于 Webpack 4 和 Babel 7，解决了 create-react-app 无法定制化等缺点。
 
 ## 文档
 
