@@ -94,3 +94,89 @@ ReactDOM.render(App, document.getElementById("root"));
 ## 监听文件夹。
 > alexios watch --folder=['src/pages, node a.js']
 ```
+
+## 配置项
+
+如果需要自定义配置项，写入`src/.alexiosrc.js`文件：
+
+```javascript
+module.exports = {
+  // 可选参数
+};
+```
+
+可选参数：
+
+| 名称 | 描述 |
+| --- | --- |
+| <a id="op-entry">entry</a> | 项目入口 |
+| <a id="op-resolveExtraExtensions">resolveExtraExtensions</a> | 额外支持省略的拓展名 |
+| <a id="op-alias">alias</a> | 设置路径别名 |
+| <a id="op-outputPath">outputPath</a> | 打包输出路径 |
+| <a id="op-disableHash">disableHash</a> | 禁用打包的 Hash |
+| <a id="op-publicPath">publicPath</a> | 公共资源路径 |
+| <a id="op-externals">externals</a> | 打包排除项 |
+| <a id="op-devtool">devtool</a> | 开发工具模式 |
+| <a id="op-html">html</a> | html 模板文件的配置 |
+| <a id="op-clearConsole">clearConsole</a> | 编译是否清空控制台 |
+
+#### `entry` [](#op-entry)
+
+entry
+
+#### `resolveExtraExtensions` [](#op-resolveExtraExtensions)
+
+resolveExtraExtensions
+
+#### `alias` [](#op-alias)
+
+alias
+
+#### `outputPath` [](#op-outputPath)
+
+outputPath
+
+#### `disableHash` [](#op-disableHash)
+
+disableHash
+
+#### `publicPath` [](#op-publicPath)
+
+publicPath
+
+#### `externals` [](#op-externals)
+
+externals
+
+#### `devtool` [](#op-devtool)
+
+devtool
+
+#### `html` [](#op-html)
+
+html
+
+#### `clearConsole` [](#op-clearConsole)
+
+clearConsole
+
+## TypeScript
+
+如果需要编写 `.ts` 或 `.tsx` 文件，只需在根目录下配置 `tsconfig.json` 即可， 这里是一个最简单的示例：
+
+```json
+{
+  "compilerOptions": {
+    "module": "esnext",
+    "target": "esnext",
+    "lib": ["esnext", "dom"],
+    "sourceMap": true,
+    "jsx": "react",
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
+    "allowJs": true,
+    "skipLibCheck": true
+  },
+  "exclude": ["node_modules", "dist"]
+}
+```

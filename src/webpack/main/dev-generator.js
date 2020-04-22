@@ -15,21 +15,24 @@ const devGenerator = props => {
   // webpack.mode
   const mode = "development";
   // webpack.entry
-  const entry = config_module.entry;
+  const entry = config_module.entry();
   // webpack.resolve
-  const resolve = config_module.resolve;
+  const resolve = config_module.resolve();
   // webpack.output
-  const output = config_module.output;
+  const output = config_module.output();
   // webpack.devServer
-  const devServer = { ...config_module.devServer, port, open };
+  const devServer = { ...config_module.devServer(), port, open };
   // webpack.externals
-  const externals = config_module.externals;
+  const externals = config_module.externals();
   // webpack.devtool
-  const devtool = config_module.devtool;
+  const devtool = config_module.devtool();
   // webpack.plugins
-  const plugins = [...config_module.common_plugins];
+  const plugins = [
+    ...config_module.common_plugins(),
+    ...config_module.dev_plugins({ port }),
+  ];
   // webpack.module
-  const module = config_module.module;
+  const module = config_module.module();
 
   const webpack_config = {
     mode,

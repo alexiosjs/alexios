@@ -18,11 +18,15 @@ const portCheck = async port => {
     process.exit(0);
   }
   // 检查端口号占用情况
-  console.log(chalk.green(`Checking the usage on port [${custom_port_number}]...\n`));
+  console.log(
+    chalk.green(`Checking the usage on port [${custom_port_number}]...\n`)
+  );
   // 获取空闲端口
   const EMPTY_PORT = await portUsage(custom_port_number);
   // 成功
-  console.log(chalk.cyan(`Port [${EMPTY_PORT}] is available, starting now...\n`));
+  console.log(
+    chalk.cyan(`Port [${EMPTY_PORT}] is available, starting now...\n`)
+  );
   return EMPTY_PORT;
 };
 
@@ -43,7 +47,9 @@ export default async argv => {
 
   const compiler = webpack(webpack_dev_config);
 
-  const dev_server = new webpackDevServer(compiler, { ...webpack_dev_config.devServer });
+  const dev_server = new webpackDevServer(compiler, {
+    ...webpack_dev_config.devServer,
+  });
 
   dev_server.listen(webpack_dev_config.devServer.port);
 };

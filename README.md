@@ -94,3 +94,89 @@ Watch your file or folder changes, directly to you custom commands or restart th
 ## Watch folder.
 > alexios watch --folder=['src/pages, node a.js']
 ```
+
+## Configuration
+
+If you need a custom configuration, ehco the `src/.alexiosrc.js`:
+
+```javascript
+module.exports = {
+  // Optional
+};
+```
+
+Optional:
+
+| Name | Description |
+| --- | --- |
+| <a id="op-entry">entry</a> | Project entrance |
+| <a id="op-resolveExtraExtensions">resolveExtraExtensions</a> | Extra support for omitted extensions |
+| <a id="op-alias">alias</a> | Set path alias |
+| <a id="op-outputPath">outputPath</a> | Packaging output path |
+| <a id="op-disableHash">disableHash</a> | Disable packaged hash |
+| <a id="op-publicPath">publicPath</a> | Public resource path |
+| <a id="op-externals">externals</a> | Package exclusions |
+| <a id="op-devtool">devtool</a> | Development tool mode |
+| <a id="op-html">html</a> | Configuration of html file |
+| <a id="op-clearConsole">clearConsole</a> | Compile clear console |
+
+#### `entry` [](#op-entry)
+
+entry
+
+#### `resolveExtraExtensions` [](#op-resolveExtraExtensions)
+
+resolveExtraExtensions
+
+#### `alias` [](#op-alias)
+
+alias
+
+#### `outputPath` [](#op-outputPath)
+
+outputPath
+
+#### `disableHash` [](#op-disableHash)
+
+disableHash
+
+#### `publicPath` [](#op-publicPath)
+
+publicPath
+
+#### `externals` [](#op-externals)
+
+externals
+
+#### `devtool` [](#op-devtool)
+
+devtool
+
+#### `html` [](#op-html)
+
+html
+
+#### `clearConsole` [](#op-clearConsole)
+
+clearConsole
+
+## TypeScript
+
+If you want to code in `.ts` or `.tsx`, you just need to configurate `tsconfig.json` in the root path. Here is a simple example :
+
+```json
+{
+  "compilerOptions": {
+    "module": "esnext",
+    "target": "esnext",
+    "lib": ["esnext", "dom"],
+    "sourceMap": true,
+    "jsx": "react",
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
+    "allowJs": true,
+    "skipLibCheck": true
+  },
+  "exclude": ["node_modules", "dist"]
+}
+```
