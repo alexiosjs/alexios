@@ -180,3 +180,7 @@ If you want to code in `.ts` or `.tsx`, you just need to configurate `tsconfig.j
   "exclude": ["node_modules", "dist"]
 }
 ```
+
+## Why called Alexios
+
+Alexios, protagonist of "Assassin's Creed: Odyssey" by Ubisoft. Αλέξιος, in ancient Greek it means "defender".

@@ -180,3 +180,7 @@ clearConsole
   "exclude": ["node_modules", "dist"]
 }
 ```
+
+## 为什么叫 Alexios
+
+Alexios, 育碧游戏公司作品《刺客信条：奥德赛》的主角。Αλέξιος，在古希腊语中意为 “防卫者”。
