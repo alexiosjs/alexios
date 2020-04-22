@@ -181,6 +181,8 @@ If you want to code in `.ts` or `.tsx`, you just need to configurate `tsconfig.j
 }
 ```
 
+For more detail, click [here](https://www.tslang.cn/docs/handbook/compiler-options.html)
+
 ## Why called Alexios
 
 Alexios, protagonist of "Assassin's Creed: Odyssey" by Ubisoft. Αλέξιος, in ancient Greek it means "defender".
