@@ -1,6 +1,6 @@
 # Alexios
 
-[查看英文版](./README.md)
+[English](./README.md)
 
 ## 为什么
 
