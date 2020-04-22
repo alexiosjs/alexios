@@ -51,7 +51,7 @@ ReactDOM.render(App, document.getElementById("root"));
 
 #### `alexios dev`
 
-Start the development server
+Start the development server.
 
 Optional params:
 
@@ -65,7 +65,7 @@ Optional params:
 
 #### `alexios build`
 
-Build your application
+Build your application.
 
 Optional params:
 
@@ -75,3 +75,22 @@ Optional params:
 ```
 
 #### `alexios watch`
+
+Watch your file or folder changes, directly to you custom commands or restart the devServer.
+
+```bash
+## Watch single file and run custom command.
+> alexios watch --file=['src/index.js, node a.js']
+
+## Watch single file and run multiple custom command.
+> alexios watch --file=['src/index.js, node a.js && node b.js']
+
+## Watch multiple file.
+> alexios watch --file=['src/index.js, node a.js', 'src/main.js, node a.js']
+
+## Watch and restart devServer, use a special string '$RESTART$'.
+> alexios watch --file=['src/index.js, $RESTART$']
+
+## Watch folder.
+> alexios watch --folder=['src/pages, node a.js']
+```

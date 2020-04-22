@@ -51,7 +51,7 @@ ReactDOM.render(App, document.getElementById("root"));
 
 #### `alexios dev`
 
-启动开发服务器
+启动开发服务器。
 
 可选参数：
 
@@ -65,7 +65,7 @@ ReactDOM.render(App, document.getElementById("root"));
 
 #### `alexios build`
 
-打包项目
+打包项目。
 
 可选参数：
 
@@ -75,3 +75,22 @@ ReactDOM.render(App, document.getElementById("root"));
 ```
 
 #### `alexios watch`
+
+监听文件或文件夹的改动, 执行自定义的指令或重启开发服务器。
+
+```bash
+## 监听单个文件，运行自定义指令。
+> alexios watch --file=['src/index.js, node a.js']
+
+## 监听单个文件，运行多个指令。
+> alexios watch --file=['src/index.js, node a.js && node b.js']
+
+## 监听多个文件。
+> alexios watch --file=['src/index.js, node a.js', 'src/main.js, node a.js']
+
+## 监听并重启开发服务器，使用特殊字符串 "$RESTART$"。
+> alexios watch --file=['src/index.js, $RESTART$']
+
+## 监听文件夹。
+> alexios watch --folder=['src/pages, node a.js']
+```
