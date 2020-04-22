@@ -12,6 +12,9 @@ const alexios = () => {
     })
     .command("build", "Package your application.", async () => {
       log(chalk.cyan("Building the application...\n"));
+    })
+    .command("watch", "Watch your file system change.", async () => {
+      log(chalk.cyan("Watch your file system change...\n"));
     }).argv;
 };
 

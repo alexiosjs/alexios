@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "cross-env PORT=9000 node bin/alexios.js",
-    "lib": "babel ./src -d ./lib",
+    "lib": "babel ./src -d ./lib --copy-files",
     "watch": "watch \"npm run lib\" src --wait=2"
   },
   "bin": "./bin/alexios.js",
@@ -25,14 +25,17 @@
     "@babel/plugin-transform-runtime": "^7.9.0",
     "@babel/preset-env": "^7.9.0",
     "@babel/register": "^7.9.0",
-    "watch": "^1.0.2",
+    "babel-loader": "^8.1.0",
     "chalk": "^4.0.0",
     "commands": "^0.0.7",
     "cross-env": "^7.0.2",
     "fs-extra": "^9.0.0",
+    "html-webpack-plugin": "^4.2.0",
+    "watch": "^1.0.2",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3",
+    "webpack-progress-bar": "^1.2.1",
     "yargs": "^15.3.1"
   }
 }

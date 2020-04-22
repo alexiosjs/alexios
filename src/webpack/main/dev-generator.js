@@ -21,15 +21,26 @@ const devGenerator = props => {
   // webpack.output
   const output = config_module.output;
   // webpack.devServer
-  const devServer = config_module;
+  const devServer = { ...config_module.devServer, port, open };
+  // webpack.externals
+  const externals = config_module.externals;
+  // webpack.devtool
+  const devtool = config_module.devtool;
+  // webpack.plugins
+  const plugins = [...config_module.common_plugins];
 
   const webpack_config = {
     mode,
     entry,
     resolve,
     output,
+    devServer,
+    externals,
+    devtool,
+    plugins,
   };
-  console.log(webpack_config);
+  // console.log(webpack_config);
+  return webpack_config;
 };
 
 export default devGenerator;
