@@ -28,6 +28,8 @@ const devGenerator = props => {
   const devtool = config_module.devtool;
   // webpack.plugins
   const plugins = [...config_module.common_plugins];
+  // webpack.module
+  const module = config_module.module;
 
   const webpack_config = {
     mode,
@@ -38,6 +40,7 @@ const devGenerator = props => {
     externals,
     devtool,
     plugins,
+    module,
   };
   // console.log(webpack_config);
   return webpack_config;
