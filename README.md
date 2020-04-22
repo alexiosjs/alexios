@@ -109,54 +109,54 @@ Optional:
 
 | Name | Description |
 | --- | --- |
-| <a id="op-entry">entry</a> | Project entrance |
-| <a id="op-resolveExtraExtensions">resolveExtraExtensions</a> | Extra support for omitted extensions |
-| <a id="op-alias">alias</a> | Set path alias |
-| <a id="op-outputPath">outputPath</a> | Packaging output path |
-| <a id="op-disableHash">disableHash</a> | Disable packaged hash |
-| <a id="op-publicPath">publicPath</a> | Public resource path |
-| <a id="op-externals">externals</a> | Package exclusions |
-| <a id="op-devtool">devtool</a> | Development tool mode |
-| <a id="op-html">html</a> | Configuration of html file |
-| <a id="op-clearConsole">clearConsole</a> | Compile clear console |
+| [entry](#entry) | Project entrance |
+| [resolveExtraExtensions](#resolveExtraExtensions) | Extra support for omitted extensions |
+| [alias](#alias) | Set path alias |
+| [outputPath](#outputPath) | Packaging output path |
+| [disableHash](#disableHash) | Disable packaged hash |
+| [publicPath](#publicPath) | Public resource path |
+| [externals](#externals) | Package exclusions |
+| [devtool](#devtool) | Development tool mode |
+| [html](#html) | Configuration of html file |
+| [clearConsole](#clearConsole) | Compile clear console |
 
-#### `entry` [](#op-entry)
+#### `entry`
 
 entry
 
-#### `resolveExtraExtensions` [](#op-resolveExtraExtensions)
+#### `resolveExtraExtensions`
 
 resolveExtraExtensions
 
-#### `alias` [](#op-alias)
+#### `alias`
 
 alias
 
-#### `outputPath` [](#op-outputPath)
+#### `outputPath`
 
 outputPath
 
-#### `disableHash` [](#op-disableHash)
+#### `disableHash`
 
 disableHash
 
-#### `publicPath` [](#op-publicPath)
+#### `publicPath`
 
 publicPath
 
-#### `externals` [](#op-externals)
+#### `externals`
 
 externals
 
-#### `devtool` [](#op-devtool)
+#### `devtool`
 
 devtool
 
-#### `html` [](#op-html)
+#### `html`
 
 html
 
-#### `clearConsole` [](#op-clearConsole)
+#### `clearConsole`
 
 clearConsole
 

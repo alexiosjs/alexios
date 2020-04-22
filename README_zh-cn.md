@@ -107,56 +107,56 @@ module.exports = {
 
 可选参数：
 
-| 名称 | 描述 |
-| --- | --- |
-| [entry](#op-entry) | 项目入口 |
-| <a id="op-resolveExtraExtensions">resolveExtraExtensions</a> | 额外支持省略的拓展名 |
-| <a id="op-alias">alias</a> | 设置路径别名 |
-| <a id="op-outputPath">outputPath</a> | 打包输出路径 |
-| <a id="op-disableHash">disableHash</a> | 禁用打包的 Hash |
-| <a id="op-publicPath">publicPath</a> | 公共资源路径 |
-| <a id="op-externals">externals</a> | 打包排除项 |
-| <a id="op-devtool">devtool</a> | 开发工具模式 |
-| <a id="op-html">html</a> | html 模板文件的配置 |
-| <a id="op-clearConsole">clearConsole</a> | 编译是否清空控制台 |
+| 名称                                              | 描述                 |
+| ------------------------------------------------- | -------------------- |
+| [entry](#entry)                                   | 项目入口             |
+| [resolveExtraExtensions](#resolveExtraExtensions) | 额外支持省略的拓展名 |
+| [alias](#alias)                                   | 设置路径别名         |
+| [outputPath](#outputPath)                         | 打包输出路径         |
+| [disableHash](#disableHash)                       | 禁用打包的 Hash      |
+| [publicPath](#publicPath)                         | 公共资源路径         |
+| [externals](#externals)                           | 打包排除项           |
+| [devtool](#devtool)                               | 开发工具模式         |
+| [html](#html)                                     | html 模板文件的配置  |
+| [clearConsole](#clearConsole)                     | 编译是否清空控制台   |
 
-#### `entry` [](#op-entry)
+#### `entry`
 
 entry
 
-#### `resolveExtraExtensions` [](#op-resolveExtraExtensions)
+#### `resolveExtraExtensions`
 
 resolveExtraExtensions
 
-#### `alias` [](#op-alias)
+#### `alias`
 
 alias
 
-#### `outputPath` [](#op-outputPath)
+#### `outputPath`
 
 outputPath
 
-#### `disableHash` [](#op-disableHash)
+#### `disableHash`
 
 disableHash
 
-#### `publicPath` [](#op-publicPath)
+#### `publicPath`
 
 publicPath
 
-#### `externals` [](#op-externals)
+#### `externals`
 
 externals
 
-#### `devtool` [](#op-devtool)
+#### `devtool`
 
 devtool
 
-#### `html` [](#op-html)
+#### `html`
 
 html
 
-#### `clearConsole` [](#op-clearConsole)
+#### `clearConsole`
 
 clearConsole
 
