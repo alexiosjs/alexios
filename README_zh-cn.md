@@ -109,7 +109,7 @@ module.exports = {
 
 | 名称 | 描述 |
 | --- | --- |
-| <a id="op-entry">entry</a> | 项目入口 |
+| [entry](#op-entry) | 项目入口 |
 | <a id="op-resolveExtraExtensions">resolveExtraExtensions</a> | 额外支持省略的拓展名 |
 | <a id="op-alias">alias</a> | 设置路径别名 |
 | <a id="op-outputPath">outputPath</a> | 打包输出路径 |
