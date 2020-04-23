@@ -4,7 +4,7 @@
 
 ## Why
 
-Alexios is a cli that allows you to `quickly start` a React project with the minimum cost, almost `zero configuration`. Based on `Webpack 4` and `Babel 7`, it solves the problem that create-react-app cannot be customized.
+Alexios is a cli that allows you to `quickly start` a React project with the minimum cost, almost `zero configuration`. Based on `Webpack 4` and `Babel 7`, it solves the problem that create-react-app cannot be customized !!!
 
 ## Docs
 
