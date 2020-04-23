@@ -5,7 +5,6 @@ import HtmlPlugin from "html-webpack-plugin";
 import FriendlyErrorsWebpackPlugin from "friendly-errors-webpack-plugin";
 import webpack from "webpack";
 import path from "path";
-import fs from "fs-extra";
 
 /**
  * webpack.entry
@@ -126,6 +125,13 @@ export const module = () => {
           },
         ],
       },
+      {
+        test: /\.(png|jpe?g|gif|ttf|woff|svg|bmp|ico)$/,
+        loader: "file-loader",
+        options: {
+          limit: 8192,
+        },
+      },
     ],
   };
 };
@@ -161,6 +167,7 @@ export const dev_plugins = conf => {
           `Your application is running at http://127.0.0.1:${conf.port}\n`,
           `Currently on development mode, to build your application, use \`alexios build\`\n`,
         ],
+        notes: [],
       },
       clearConsole: getRcConfig("clearConsole") || true,
     }),

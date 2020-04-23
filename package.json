@@ -2,7 +2,7 @@
   "name": "alexios",
   "version": "0.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "lib/lib/index.js",
   "scripts": {
     "start": "cross-env PORT=9000 node bin/alexios.js",
     "lib": "babel ./src -d ./lib --copy-files",
@@ -22,6 +22,7 @@
   "dependencies": {
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.9.0",
+    "@babel/plugin-proposal-decorators": "^7.8.3",
     "@babel/plugin-transform-runtime": "^7.9.0",
     "@babel/preset-env": "^7.9.0",
     "@babel/preset-react": "^7.9.4",
@@ -31,9 +32,11 @@
     "chalk": "^4.0.0",
     "commands": "^0.0.7",
     "cross-env": "^7.0.2",
+    "file-loader": "^6.0.0",
     "friendly-errors-webpack-plugin": "^1.7.0",
     "fs-extra": "^9.0.0",
     "html-webpack-plugin": "^4.2.0",
+    "redbox-react": "^1.6.0",
     "ts-loader": "^7.0.1",
     "typescript": "^3.8.3",
     "watch": "^1.0.2",
@@ -42,5 +45,9 @@
     "webpack-dev-server": "^3.10.3",
     "webpack-progress-bar": "^1.2.1",
     "yargs": "^15.3.1"
+  },
+  "devDependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   }
 }

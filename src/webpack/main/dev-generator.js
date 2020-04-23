@@ -45,7 +45,7 @@ const devGenerator = props => {
     plugins,
     module,
   };
-  // console.log(webpack_config);
+
   return webpack_config;
 };
 
