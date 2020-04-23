@@ -2,7 +2,7 @@
   "name": "alexios",
   "version": "0.0.1",
   "description": "",
-  "main": "lib/lib/index.js",
+  "main": "lib/modules/index.js",
   "scripts": {
     "start": "cross-env PORT=9000 node bin/alexios.js",
     "lib": "babel ./src -d ./lib --copy-files",
@@ -36,7 +36,6 @@
     "friendly-errors-webpack-plugin": "^1.7.0",
     "fs-extra": "^9.0.0",
     "html-webpack-plugin": "^4.2.0",
-    "redbox-react": "^1.6.0",
     "ts-loader": "^7.0.1",
     "typescript": "^3.8.3",
     "watch": "^1.0.2",
@@ -44,9 +43,7 @@
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3",
     "webpack-progress-bar": "^1.2.1",
-    "yargs": "^15.3.1"
-  },
-  "devDependencies": {
+    "yargs": "^15.3.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   }
