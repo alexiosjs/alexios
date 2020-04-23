@@ -31,10 +31,15 @@ Alexios is a cli that allows you to `quickly start` a React project with the min
 
 ```javascript
 // Echo in src/index.js
-import ReactDOM from "react-dom";
+import Alexios from "alexios";
 
-const App = () => <>App</>;
-ReactDOM.render(App, document.getElementById("root"));
+const App = () => <h1>Hello World</h1>;
+
+const alexios = new Alexios({
+  node: App,
+});
+
+alexios.launch();
 ```
 
 ```bash

@@ -31,10 +31,15 @@ Alexios 是一个使用最小的成本`快速开始`一个 React 项目的脚手
 
 ```javascript
 // 写入 src/index.js
-import ReactDOM from "react-dom";
+import Alexios from "alexios";
 
-const App = () => <>App</>;
-ReactDOM.render(App, document.getElementById("root"));
+const App = () => <h1>Hello World</h1>;
+
+const alexios = new Alexios({
+  node: App,
+});
+
+alexios.launch();
 ```
 
 ```bash
@@ -45,6 +50,53 @@ ReactDOM.render(App, document.getElementById("root"));
 
 ## 打包项目
 > alexios build
+```
+
+## 启动器
+
+你可以使用 alexios 内置的启动器快速渲染你的第一个 React 节点，也可以用任何你喜欢的方式来替代它，alexios 的启动器只是为你提供了一个便捷的方式
+
+使用 alexios 的启动器：
+
+```jsx
+// 引入alexios启动器的构造函数
+import Alexios from "alexios";
+
+// 你的第一个节点
+const App = () => <h1>Hellow World</h1>;
+
+// 创建启动器实例
+const alexios = new Alexios({
+  node: App,
+});
+
+// 启动
+alexios.launch();
+```
+
+启动器实例化参数：
+
+| 名称      | 用途                       | 必填 |
+| --------- | -------------------------- | ---- |
+| elementId | 根元素的 id，默认为 `root` | 否   |
+| node      | 根级 React 组件            | 是   |
+
+启动器实例方法：
+
+| 名称   | 用途 |
+| ------ | ---- |
+| launch | 启动 |
+
+如果你不想使用 alexios 自带的启动器，可以这样做：
+
+```jsx
+import React from "react";
+import ReactDOM from "react-dom";
+
+const App = () => <h1>Hello World</h1>;
+
+// 确认这个id确实存在于html中
+ReactDOM.render(<App />, document.getElementById("root"));
 ```
 
 ## 指令
