@@ -54,12 +54,12 @@ alexios.launch();
 
 ## 启动器
 
-你可以使用 alexios 内置的启动器快速渲染你的第一个 React 节点，也可以用任何你喜欢的方式来替代它，alexios 的启动器只是为你提供了一个便捷的方式
+你可以使用 Alexios 内置的启动器快速渲染你的第一个 React 节点，也可以用任何你喜欢的方式来替代它，Alexios 的启动器只是为你提供了一个便捷的方式。
 
-使用 alexios 的启动器：
+使用 Alexios 的启动器：
 
 ```jsx
-// 引入alexios启动器的构造函数
+// 引入Alexios启动器的构造函数
 import Alexios from "alexios";
 
 // 你的第一个节点

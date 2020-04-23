@@ -52,6 +52,53 @@ alexios.launch();
 > alexios build
 ```
 
+## Launcher
+
+You can use Alexios's built-in launcher to quickly render your first React node, or you can replace it in any way you like. Alexios's launcher just provides you with a convenient way.
+
+Using Alexios Launcher:
+
+```jsx
+// Import the Alexios launcher's constructor
+import Alexios from "alexios";
+
+// Your first React Component
+const App = () => <h1>Hellow World</h1>;
+
+// Create launcher instance
+const alexios = new Alexios({
+  node: App,
+});
+
+// Launcher
+alexios.launch();
+```
+
+Launcher instantiation parameters:
+
+| name      | description                     | required |
+| --------- | ------------------------------- | -------- |
+| elementId | root element id, default `root` | no       |
+| node      | root React Component            | yes      |
+
+Instance methods:
+
+| name   | description    |
+| ------ | -------------- |
+| launch | launch the app |
+
+If you don't want to use the Alexios launcher, you can do this:
+
+```jsx
+import React from "react";
+import ReactDOM from "react-dom";
+
+const App = () => <h1>Hello World</h1>;
+
+// Confirm that the id does exist in HTML
+ReactDOM.render(<App />, document.getElementById("root"));
+```
+
 ## Commands
 
 #### `alexios dev`
