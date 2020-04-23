@@ -1,13 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-/**
- * Alexios App - Alexio 启动器
- * @constructor
- * @param {object} props
- * @param {string=} props.elementId root element id - 根元素的id
- * @param {any} props.node React Component - React 组件
- */
 function Alexios(props = {}) {
   this.elementId = props.elementId || "root";
   this.Node = props.node;
