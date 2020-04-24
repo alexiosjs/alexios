@@ -1,6 +1,6 @@
 # Alexios
 
-<img src="./logo.png" width="100px" />
+<img src="./logo.png" width="150px" />
 
 [查看中文版](./README_zh-cn.md)
 
