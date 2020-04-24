@@ -33,7 +33,7 @@ Alexios is a cli that allows you to `quickly start` a React project with the min
 > npm install react react-dom --save-dev
 ```
 
-```javascript
+```jsx
 // Echo in src/index.js
 import Alexios from "alexios";
 
