@@ -1,5 +1,7 @@
 # Alexios
 
+基于 `Webpack` 和 `babel` 的零配置、强大的轻量化 `React` 脚手架。
+
 <img src="./logo.png" width="150px" />
 
 [English](./README.md)
