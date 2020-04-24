@@ -1,5 +1,7 @@
 # Alexios
 
+<img src="./logo.png" width="150px" />
+
 [English](./README.md)
 
 ## 为什么
