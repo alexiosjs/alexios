@@ -242,3 +242,5 @@ For more detail, click [here](https://www.tslang.cn/docs/handbook/compiler-optio
 ## Why called Alexios
 
 Alexios, protagonist of "Assassin's Creed: Odyssey" by Ubisoft. Αλέξιος, in ancient Greek it means "defender".
+
+<img src="./logo-text.png" width="200px" />
