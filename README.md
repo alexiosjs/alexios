@@ -1,5 +1,7 @@
 # Alexios
 
+A lightweight, powerful and zero-configuration cli based on `Webpack` and `babel`.
+
 <img src="./logo.png" width="150px" />
 
 [查看中文版](./README_zh-cn.md)
