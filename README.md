@@ -1,6 +1,6 @@
 # Alexios
 
-A lightweight, powerful and zero-configuration cli based on `Webpack` and `babel`.
+A lightweight, powerful and zero-configuration `React` cli based on `Webpack` and `babel`.
 
 <img src="./logo.png" width="150px" />
 
