@@ -33,7 +33,7 @@ Alexios 是一个使用最小的成本`快速开始`一个 React 项目的脚手
 > npm install react react-dom --save-dev
 ```
 
-```javascript
+```jsx
 // 写入 src/index.js
 import Alexios from "alexios";
 
