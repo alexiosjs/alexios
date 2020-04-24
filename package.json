@@ -1,7 +1,7 @@
 {
   "name": "alexios",
   "version": "0.0.1",
-  "description": "",
+  "description": "A lightweight, powerful and zero-configuration React cli based on Webpack and babel.",
   "main": "lib/modules/index.js",
   "scripts": {
     "start": "cross-env PORT=9000 node bin/alexios.js",
@@ -11,14 +11,14 @@
   "bin": "./bin/alexios.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Cavendichun/Alexios.git"
+    "url": "git+https://github.com/alexiosjs/alexios.git"
   },
   "author": "Cavendichun",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Cavendichun/Alexios/issues"
+    "url": "https://github.com/alexiosjs/alexios/issues"
   },
-  "homepage": "https://github.com/Cavendichun/Alexios#readme",
+  "homepage": "https://github.com/alexiosjs/alexios#readme",
   "dependencies": {
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.9.0",
