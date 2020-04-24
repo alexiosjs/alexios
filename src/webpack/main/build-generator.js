@@ -1,6 +1,5 @@
 /**
  * 打包配置
- * @author Cavendichun
  *
  * @param {object} props
  *
