@@ -5,6 +5,7 @@ import HtmlPlugin from "html-webpack-plugin";
 import FriendlyErrorsWebpackPlugin from "friendly-errors-webpack-plugin";
 import webpack from "webpack";
 import path from "path";
+import fs from "fs-extra";
 
 /**
  * webpack.entry
@@ -14,7 +15,7 @@ export const entry = () => {
   return (
     getRcConfig("entry") || {
       // 入口
-      main: projectPath("src/index.js"),
+      main: projectPath("src/index"),
     }
   );
 };
@@ -105,7 +106,15 @@ export const module = () => {
         exclude: /(node_modules|bower_components)/,
         loader: [
           {
-            loader: "ts-loader",
+            loader: "awesome-typescript-loader",
+            options: {
+              configFileName: fs.existsSync(projectPath("tsconfig.json"))
+                ? projectPath("tsconfig.json").replace(/\\/g, "/")
+                : path
+                    .resolve(__dirname, "../../templates/tsconfig.json")
+                    .replace(/\\/g, "/"),
+              silent: true,
+            },
           },
         ],
       },
