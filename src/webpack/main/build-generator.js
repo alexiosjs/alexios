@@ -6,10 +6,7 @@
  * @returns {object} webpackConfig
  */
 
-const buildGenerator = (a, b, c) => {
-  const TEST = 1;
-  const B = 12;
-  const C = 12;
+const buildGenerator = () => {
   // TODO: 项目打包配置
 };
 
