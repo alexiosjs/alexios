@@ -10,7 +10,7 @@
 
 #### Related issue (if has)
 
-- #
+- #...
 
 #### Background & Solution
 
