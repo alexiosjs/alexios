@@ -1,5 +1,4 @@
-import getRcConfig from "../../utils/get-rc-config";
-import * as config_module from "../config-module";
+import * as configModule from "../config-module";
 
 /**
  * @description 开发环境配置
@@ -15,26 +14,26 @@ const devGenerator = props => {
   // webpack.mode
   const mode = "development";
   // webpack.entry
-  const entry = config_module.entry();
+  const entry = configModule.entry();
   // webpack.resolve
-  const resolve = config_module.resolve();
+  const resolve = configModule.resolve();
   // webpack.output
-  const output = config_module.output();
+  const output = configModule.output();
   // webpack.devServer
-  const devServer = { ...config_module.devServer(), port, open };
+  const devServer = { ...configModule.devServer(), port, open };
   // webpack.externals
-  const externals = config_module.externals();
+  const externals = configModule.externals();
   // webpack.devtool
-  const devtool = config_module.devtool();
+  const devtool = configModule.devtool();
   // webpack.plugins
   const plugins = [
-    ...config_module.common_plugins(),
-    ...config_module.dev_plugins({ port }),
+    ...configModule.commonPlugins(),
+    ...configModule.devPlugins({ port }),
   ];
   // webpack.module
-  const module = config_module.module();
+  const module = configModule.module();
 
-  const webpack_config = {
+  const webpackConfig = {
     mode,
     entry,
     resolve,
@@ -46,7 +45,7 @@ const devGenerator = props => {
     module,
   };
 
-  return webpack_config;
+  return webpackConfig;
 };
 
 export default devGenerator;

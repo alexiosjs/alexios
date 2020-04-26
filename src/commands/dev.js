@@ -1,28 +1,28 @@
+import webpack from "webpack";
+import WebpackDevServer from "webpack-dev-server";
 import chalk from "chalk";
-import default_setting from "../config/default-setting";
+import defaultSetting from "../config/default-setting";
 import portUsage from "../utils/port-usage";
 import { webpackDev } from "../webpack/main";
-import webpack from "webpack";
-import webpackDevServer from "webpack-dev-server";
 
 /**
  * 检查端口情况，返回空闲端口
  */
 const portCheck = async port => {
   // 自定义端口号
-  const custom_port_number = Number(port);
+  const customPortNumber = Number(port);
   // 端口号非法
-  if (!custom_port_number) {
+  if (!customPortNumber) {
     console.log(chalk.red(`Illegal port [${port}] !\n`));
     // 结束进程
     process.exit(0);
   }
   // 检查端口号占用情况
   console.log(
-    chalk.green(`Checking the usage on port [${custom_port_number}]...\n`)
+    chalk.green(`Checking the usage on port [${customPortNumber}]...\n`)
   );
   // 获取空闲端口
-  const EMPTY_PORT = await portUsage(custom_port_number);
+  const EMPTY_PORT = await portUsage(customPortNumber);
   // 成功
   console.log(
     chalk.cyan(`Port [${EMPTY_PORT}] is available, starting now...\n`)
@@ -33,23 +33,23 @@ const portCheck = async port => {
 export default async argv => {
   const {
     /** 端口号 */
-    port = default_setting.PORT,
+    port = defaultSetting.PORT,
     /** 是否打开浏览器 */
-    open = default_setting.OPEN,
+    open = defaultSetting.OPEN,
   } = argv;
 
   const EMPTY_PORT = await portCheck(port);
 
-  const webpack_dev_config = webpackDev({
+  const webpackDevConfig = webpackDev({
     port: Number(EMPTY_PORT),
     open: open === "true",
   });
 
-  const compiler = webpack(webpack_dev_config);
+  const compiler = webpack(webpackDevConfig);
 
-  const dev_server = new webpackDevServer(compiler, {
-    ...webpack_dev_config.devServer,
+  const devServer = new WebpackDevServer(compiler, {
+    ...webpackDevConfig.devServer,
   });
 
-  dev_server.listen(webpack_dev_config.devServer.port);
+  devServer.listen(webpackDevConfig.devServer.port);
 };

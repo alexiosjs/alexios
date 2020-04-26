@@ -9,15 +9,16 @@ function Alexios(props = {}) {
 Alexios.prototype.launch = function () {
   const { elementId, Node } = this;
   const root = document.getElementById(elementId);
-  if (!root)
+  if (!root) {
     throw new Error(
       `There is no element with id '${elementId}' in HTML template.`
     );
-  if (!Node)
+  }
+  if (!Node) {
     throw new Error(
       `Missing attribute 'node', the root React Component/Function Component.`
     );
-
+  }
   ReactDOM.render(<Node />, root);
 };
 
