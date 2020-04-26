@@ -1,9 +1,3 @@
----
-name: Regular PR
-assignees: Cavendichun
-
----
-
 #### Type of PR
 
 - [ ] New feature
