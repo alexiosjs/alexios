@@ -218,7 +218,7 @@ clearConsole
 
 ## TypeScript
 
-如果需要编写 `.ts` 或 `.tsx` 文件，只需在根目录下配置 `tsconfig.json` 即可， 这里是一个最简单的示例：
+我们提供默认的基本配置，您不必须提供其他配置：
 
 ```json
 {
@@ -236,6 +236,8 @@ clearConsole
   "exclude": ["node_modules", "dist"]
 }
 ```
+
+如果需要自定义，请在根路径中编辑 'tsconfig.json' ，它将覆盖我们的默认配置。
 
 查看更多配置项，点击[这里](https://www.tslang.cn/docs/handbook/compiler-options.html)
 
