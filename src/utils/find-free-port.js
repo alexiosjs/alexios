@@ -1,8 +1,8 @@
 const net = require("net");
 
 function findFreePort(beg, ...rest) {
-  const p = rest.slice(0, rest.length - 1),
-    cb = rest[rest.length - 1];
+  const p = rest.slice(0, rest.length - 1);
+  const cb = rest[rest.length - 1];
 
   let [end, ip, cnt] = Array.from(p);
 
@@ -23,19 +23,19 @@ function findFreePort(beg, ...rest) {
   const res = [];
 
   const probe = function (ip, port, cb) {
-    const s = net.createConnection({ port: port, host: ip });
+    const s = net.createConnection({ port, host: ip });
 
-    s.on("connect", function () {
+    s.on("connect", () => {
       s.end();
       cb(null, port + 1);
     });
 
-    s.on("error", err => {
+    s.on("error", () => {
       cb(port);
     });
   };
 
-  var onprobe = function (port, nextPort) {
+  const onprobe = function (port, nextPort) {
     if (port) {
       res.push(port);
 

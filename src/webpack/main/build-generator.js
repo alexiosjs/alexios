@@ -6,6 +6,6 @@
  * @returns {object} webpackConfig
  */
 
-const buildGenerator = props => {};
+const buildGenerator = () => {};
 
 export default buildGenerator;
