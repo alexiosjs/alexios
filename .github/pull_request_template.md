@@ -12,6 +12,10 @@
 
 - #...
 
-#### Background & Solution
+#### Background & Solution (required)
+
+#### New dependencies (if has)
+
+- #...
 
 #### Remarks
