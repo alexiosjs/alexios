@@ -3,16 +3,16 @@ import path from "path";
 /**
  * @description 获取项目实际根路径
  *
- * @param {string=} concat_path 需要拼接的路径
+ * @param {string=} concatPath 需要拼接的路径
  *
  * @returns {string}  拼接路径
  */
-const projectPath = concat_path => {
-  const root_path = process.cwd();
-  if (concat_path) {
-    return path.resolve(root_path, concat_path);
+const projectPath = concatPath => {
+  const rootPath = process.cwd();
+  if (concatPath) {
+    return path.resolve(rootPath, concatPath);
   }
-  return root_path;
+  return rootPath;
 };
 
 export default projectPath;

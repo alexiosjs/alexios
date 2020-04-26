@@ -6,6 +6,8 @@
  * @returns {object} webpackConfig
  */
 
-const buildGenerator = props => {};
+const buildGenerator = () => {
+  // TODO: 项目打包配置!!
+};
 
 export default buildGenerator;

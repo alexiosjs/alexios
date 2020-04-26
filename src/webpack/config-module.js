@@ -1,11 +1,11 @@
-import projectPath from "../utils/project-path";
-import getRcConfig from "../utils/get-rc-config";
-import ProgressBar from "webpack-progress-bar";
-import HtmlPlugin from "html-webpack-plugin";
-import FriendlyErrorsWebpackPlugin from "friendly-errors-webpack-plugin";
 import webpack from "webpack";
 import path from "path";
 import fs from "fs-extra";
+import FriendlyErrorsWebpackPlugin from "friendly-errors-webpack-plugin";
+import ProgressBar from "webpack-progress-bar";
+import HtmlPlugin from "html-webpack-plugin";
+import projectPath from "../utils/project-path";
+import getRcConfig from "../utils/get-rc-config";
 
 /**
  * webpack.entry
@@ -148,7 +148,7 @@ export const module = () => {
 /**
  * @description common plugins
  */
-export const common_plugins = () => {
+export const commonPlugins = () => {
   return [
     new ProgressBar({}),
     new webpack.HotModuleReplacementPlugin(),
@@ -168,7 +168,7 @@ export const common_plugins = () => {
  * @param {object} conf
  * @param {number} conf.port 端口号
  */
-export const dev_plugins = conf => {
+export const devPlugins = conf => {
   return [
     new FriendlyErrorsWebpackPlugin({
       compilationSuccessInfo: {
