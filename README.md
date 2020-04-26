@@ -218,7 +218,7 @@ clearConsole
 
 ## TypeScript
 
-If you want to code in `.ts` or `.tsx`, you just need to configurate `tsconfig.json` in the root path. Here is a simple example :
+We provide the default basic configuration, you don't have to provide additional configuration:
 
 ```json
 {
@@ -236,6 +236,8 @@ If you want to code in `.ts` or `.tsx`, you just need to configurate `tsconfig.j
   "exclude": ["node_modules", "dist"]
 }
 ```
+
+If you need to customize, echo `tsconfig.json` in the root path, It will override our default configuration.
 
 For more detail, click [here](https://www.tslang.cn/docs/handbook/compiler-options.html)
 
