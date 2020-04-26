@@ -7,7 +7,7 @@
  */
 
 const buildGenerator = () => {
-  // TODO: 打包配置
+  // TODO: 项目打包配置
 };
 
 export default buildGenerator;

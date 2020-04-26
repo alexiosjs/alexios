@@ -1,0 +1,56 @@
+parser: babel-eslint
+extends: airbnb
+env:
+  browser: true
+  commonjs: true
+  node: true
+  es6: true
+  mocha: true
+parserOptions:
+  ecmaVersion: 7
+  ecmaFeatures:
+    jsx: true
+    modules: true
+    experimentalObjectRestSpread: true
+plugins:
+  - react
+rules:
+  jsx-a11y/href-no-hash: off
+  operator-linebreak: off
+  generator-star-spacing: off
+  consistent-return: off
+  react/jsx-filename-extension: off
+  react/react-in-jsx-scope: off
+  react/forbid-prop-types: off
+  global-require: off
+  import/no-dynamic-require: off
+  no-lonely-if: off
+  import/prefer-default-export: off
+  react/jsx-no-bind: off
+  react/prop-types: off
+  react/prefer-stateless-function: off
+  no-else-return: off
+  no-restricted-syntax: off
+  import/no-extraneous-dependencies: off
+  no-use-before-define: off
+  jsx-a11y/no-static-element-interactions: off
+  no-nested-ternary: off
+  arrow-body-style: off
+  import/extensions: off
+  no-bitwise: off
+  no-cond-assign: off
+  import/no-unresolved: off
+  require-yield: off
+  no-param-reassign: off
+  no-shadow: off
+  no-underscore-dangle: off
+  spaced-comment: off
+  indent: off
+  quotes: off
+  func-names: off
+  arrow-parens: off
+  space-before-function-paren: off
+  no-useless-escape: off
+  object-curly-newline: off
+  no-console: off
+  comma-dangle: off
