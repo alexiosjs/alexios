@@ -4,12 +4,11 @@
   "description": "A lightweight, powerful and zero-configuration React cli based on Webpack and babel.",
   "main": "lib/modules/index.js",
   "scripts": {
-    "start": "cross-env PORT=9000 node bin/alexios.js",
     "lib": "babel ./src -d ./lib --copy-files",
-    "watch": "watch \"npm run lib\" src --wait=2",
-    "precommit": "lint-staged",
+    "start": "watch \"npm run lib\" src --wait=2",
     "format:all": "prettier --write ./src ./bin",
-    "lint:all": "eslint ./src --format=pretty"
+    "lint:all": "eslint ./src --format=pretty",
+    "commit": "git-cz"
   },
   "bin": "./bin/alexios.js",
   "repository": {
@@ -22,11 +21,16 @@
     "url": "https://github.com/alexiosjs/alexios/issues"
   },
   "homepage": "https://github.com/alexiosjs/alexios#readme",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "node scripts/verify-commit.js"
+    }
+  },
   "lint-staged": {
-    "*.js": [
+    "src/**/*.js": [
       "prettier --write",
-      "eslint",
-      "git add"
+      "eslint --format=pretty"
     ]
   },
   "dependencies": {
@@ -60,6 +64,9 @@
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
+    "commitizen": "^4.0.4",
+    "conventional-changelog": "^3.1.18",
+    "conventional-changelog-cli": "^2.0.31",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.1.0",
     "eslint-formatter-pretty": "^3.0.1",
@@ -67,6 +74,7 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^3.0.0",
+    "git-cz": "^4.3.1",
     "husky": "^4.2.5",
     "lint-staged": "^10.1.7",
     "prettier": "^2.0.5"

@@ -16,6 +16,7 @@ plugins:
   - react
 rules:
   jsx-a11y/href-no-hash: off
+  linebreak-style: off
   operator-linebreak: off
   generator-star-spacing: off
   consistent-return: off
