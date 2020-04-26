@@ -27,8 +27,8 @@ const devGenerator = props => {
   const devtool = configModule.devtool();
   // webpack.plugins
   const plugins = [
-    ...configModule.common_plugins(),
-    ...configModule.dev_plugins({ port }),
+    ...configModule.commonPlugins(),
+    ...configModule.devPlugins({ port }),
   ];
   // webpack.module
   const module = configModule.module();
