@@ -1,5 +1,9 @@
 # Alexios
 
+![NPM_VERSION](https://img.shields.io/npm/v/alexios.svg?style=flat)
+![LICENSE](https://img.shields.io/github/license/alexiosjs/alexios)
+![Build Status](https://www.travis-ci.org/alexiosjs/alexios.svg?branch=master&style=flat-square)
+
 基于 `Webpack` 和 `babel` 的零配置、强大的轻量化 `React` 脚手架。
 
 <img src="./logo.png" width="150px" />
