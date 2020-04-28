@@ -1,5 +1,9 @@
 # Alexios
 
+![NPM_VERSION](https://img.shields.io/npm/v/alexios.svg?style=flat)
+![LICENSE](https://img.shields.io/github/license/alexiosjs/alexios)
+![Build Status](https://www.travis-ci.org/alexiosjs/alexios.svg?branch=master&style=flat-square)
+
 A lightweight, powerful and zero-configuration `React` cli based on `Webpack` and `babel`.
 
 <img src="./logo.png" width="150px" />
