@@ -11,7 +11,7 @@ Alexios.prototype.launch = function () {
   const root = document.getElementById(elementId);
   if (!root) {
     throw new Error(
-      `There is no element with id '${elementId}' in HTML template.`
+      `There is no element with id '${elementId}' in HTML template!`
     );
   }
   if (!Node) {
