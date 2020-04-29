@@ -8,7 +8,8 @@
     "start": "watch \"npm run lib\" src --wait=2",
     "format:all": "prettier --write ./src ./bin",
     "lint:all": "eslint ./src --format=pretty",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
   },
   "bin": "./bin/alexios.js",
   "repository": {
