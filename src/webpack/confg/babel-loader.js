@@ -1,7 +1,7 @@
 const babelLoader = {
   loader: "babel-loader",
   options: {
-    presets: ["react-app"],
+    presets: ["alexios"],
   },
 };
 
