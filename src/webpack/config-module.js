@@ -6,6 +6,7 @@ import ProgressBar from "webpack-progress-bar";
 import HtmlPlugin from "html-webpack-plugin";
 import projectPath from "../utils/project-path";
 import getRcConfig from "../utils/get-rc-config";
+import babelLoader from "./confg/babel-loader";
 
 /**
  * webpack.entry
@@ -66,7 +67,7 @@ export const output = () => {
  */
 export const devServer = () => {
   return {
-    inline: true, // 内联模式
+    // inline: true, // 内联模式
     historyApiFallback: true,
     allowedHosts: [],
     host: "localhost", // 服务器主机号
@@ -105,6 +106,8 @@ export const module = () => {
         test: /\.(ts|tsx)$/,
         exclude: /(node_modules|bower_components)/,
         loader: [
+          babelLoader,
+          // ts-loader 只负责转换到preset-env能处理的状态
           {
             loader: "awesome-typescript-loader",
             options: {
@@ -121,18 +124,7 @@ export const module = () => {
       {
         test: /\.(js|jsx)$/,
         exclude: /(node_modules|bower_components)/,
-        loader: [
-          {
-            loader: "babel-loader",
-            options: {
-              presets: [
-                "@babel/preset-env",
-                "@babel/preset-react",
-                "@babel/preset-typescript",
-              ],
-            },
-          },
-        ],
+        loader: [babelLoader],
       },
       {
         test: /\.(png|jpe?g|gif|ttf|woff|svg|bmp|ico)$/,
