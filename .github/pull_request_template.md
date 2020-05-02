@@ -1,12 +1,13 @@
 #### Type of PR
 
-- [ ] New feature
-- [ ] Bug fix
-- [ ] Document
-- [ ] Refactoring
-- [ ] Merge branch
-- [ ] Development assistance
-- [ ] Other:
+- [ ] feat
+- [ ] fix
+- [ ] docs
+- [ ] refactor
+- [ ] style
+- [ ] pref
+- [ ] chore
+- [ ] other:
 
 #### Related issue (if has)
 
