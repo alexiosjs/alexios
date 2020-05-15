@@ -1,12 +1,14 @@
 import webpack from "webpack";
 import path from "path";
 import fs from "fs-extra";
+import chalk from "chalk";
 import FriendlyErrorsWebpackPlugin from "friendly-errors-webpack-plugin";
 import ProgressBar from "webpack-progress-bar";
 import HtmlPlugin from "html-webpack-plugin";
 import projectPath from "../utils/project-path";
 import getRcConfig from "../utils/get-rc-config";
 import babelLoader from "./confg/babel-loader";
+import getNetworkIp from "../utils/get-network-ip";
 
 /**
  * webpack.entry
@@ -161,11 +163,17 @@ export const commonPlugins = () => {
  * @param {number} conf.port 端口号
  */
 export const devPlugins = conf => {
+  const newworkIp = getNetworkIp();
+  const newworkAddress = newworkIp
+    ? `\n\t${chalk.cyan(`NETWORK: http://${newworkIp}:${conf.port}`)}\n`
+    : "";
   return [
     new FriendlyErrorsWebpackPlugin({
       compilationSuccessInfo: {
         messages: [
-          `Your application is running at http://127.0.0.1:${conf.port}\n`,
+          `Your application is running at: \n\n\t${chalk.cyan(
+            `LOCAL: http://127.0.0.1:${conf.port}`
+          )}\n${newworkAddress}`,
           `Currently on development mode, to build your application, use \`alexios build\`\n`,
         ],
         notes: [],
