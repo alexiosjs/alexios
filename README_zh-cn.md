@@ -178,13 +178,13 @@ module.exports = {
 | [html](#html)                                     | html 模板文件的配置  |
 | [clearConsole](#clearConsole)                     | 编译是否清空控制台   |
 
-#### `entry`
+#### entry
 
 指定程序运行的入口，同 [`webpack.entry`](https://www.webpackjs.com/configuration/entry-context/#entry)
 
 默认为: `<项目根路径>/index`。
 
-#### `resolveExtraExtensions`
+#### resolveExtraExtensions
 
 指定额外可省略的拓展名。
 
@@ -200,7 +200,7 @@ module.exports = {
 
 resolveExtraExtensions
 
-#### `extraAlias`
+#### extraAlias
 
 指定额外的路径别名。
 
@@ -217,13 +217,13 @@ module.exports = {
 
 默认预置了 `{ "@": "src" }`。
 
-#### `outputPath`
+#### outputPath
 
 指定打包输出文件的路径，同 [`webpack.output.path`](https://webpack.js.org/configuration/output/#outputpath)。
 
 默认为： `<项目根路径>/dist` 。
 
-#### `disableHash`
+#### disableHash
 
 默认为打包后的文件开启 `hash`，如果需要禁用，设置该项为 `true`。
 
@@ -235,7 +235,7 @@ module.exports = {
 };
 ```
 
-#### `publicPath`
+#### publicPath
 
 打包后文件的公共资源路径，一般不需要设置，如果有特殊需求，可以指定。
 
@@ -249,23 +249,23 @@ module.exports = {
 
 默认为 `/` 。
 
-#### `externals`
+#### externals
 
 防止将某些 import 的包(package)打包到 bundle 中，而是在运行时(runtime)再去从外部获取这些扩展依赖。
 
 同[`webpack.externals`](https://webpack.js.org/configuration/externals/#externals)。
 
-#### `devtool`
+#### devtool
 
 设置 `sourceMap` 的风格，同[`webpack.devtool`](https://webpack.js.org/configuration/devtool/#devtool)。
 
 默认为：`eval-source-map` 。
 
-#### `html`
+#### html
 
 html
 
-#### `clearConsole`
+#### clearConsole
 
 clearConsole
 
