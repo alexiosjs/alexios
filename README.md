@@ -1,8 +1,6 @@
 # Alexios
 
-![NPM_VERSION](https://img.shields.io/npm/v/alexios.svg?style=flat)
-![LICENSE](https://img.shields.io/github/license/alexiosjs/alexios)
-![Build Status](https://www.travis-ci.org/alexiosjs/alexios.svg?branch=master&style=flat-square)
+![NPM_VERSION](https://img.shields.io/npm/v/alexios.svg?style=flat) ![LICENSE](https://img.shields.io/github/license/alexiosjs/alexios) ![Build Status](https://www.travis-ci.org/alexiosjs/alexios.svg?branch=master&style=flat-square)
 
 A lightweight, powerful and zero-configuration `React` cli based on `Webpack` and `babel`.
 
@@ -171,7 +169,7 @@ Optional:
 | --- | --- |
 | [entry](#entry) | Project entrance |
 | [resolveExtraExtensions](#resolveExtraExtensions) | Extra support for omitted extensions |
-| [alias](#alias) | Set path alias |
+| [extraAlias](#extraAlias) | Set extra path alias |
 | [outputPath](#outputPath) | Packaging output path |
 | [disableHash](#disableHash) | Disable packaged hash |
 | [publicPath](#publicPath) | Public resource path |
@@ -182,35 +180,84 @@ Optional:
 
 #### `entry`
 
-entry
+Specify the entry of the program, same as [`webpack.entry`](https://www.webpackjs.com/configuration/entry-context/#entry)
+
+Default as: `<projectPath>/index` .
 
 #### `resolveExtraExtensions`
 
-resolveExtraExtensions
+Specifies additional extensions that can be omitted.
 
-#### `alias`
+For example:
 
-alias
+```javascript
+module.exports = {
+  resolveExtraExtensions: [".json", ".png"],
+};
+```
+
+By default, `[".js", ".ts", ".jsx", ".tsx"]` is preset, and it is unnecessary to specify it again.
+
+#### `extraAlias`
+
+Specify additional path aliases.
+
+For example:
+
+```javascript
+module.exports = {
+  extraAlias: {
+    "@component": "src/component",
+    "@utils": "src/utils",
+  },
+};
+```
+
+`{ "@": "src" }` is preset by default.
 
 #### `outputPath`
 
-outputPath
+Specifies the path to package the output file, same as [`webpack.output.path`](https://webpack.js.org/configuration/output/#outputpath).
+
+Default as: `<projectPath>/dist` .
 
 #### `disableHash`
 
-disableHash
+By default, `hash` is enabled for packed files. If you need to disable it, set this to `true`.
+
+For example:
+
+```javascript
+module.exports = {
+  disableHash: true,
+};
+```
 
 #### `publicPath`
 
-publicPath
+The path of the public resource of the packed file generally does not need to be set. If there are special requirements, you can specify it.
+
+For example:
+
+```js
+module.exports = {
+  publicPath: "/a",
+};
+```
+
+Default as `/` .
 
 #### `externals`
 
-externals
+Prevent bundling of certain imported packages and instead retrieve these external dependencies at runtime.
+
+Same as [`webpack.externals`](https://webpack.js.org/configuration/externals/#externals).
 
 #### `devtool`
 
-devtool
+Choose a style of `sourceMap`, same as [`webpack.devtool`](https://webpack.js.org/configuration/devtool/#devtool).
+
+Default as: `eval-source-map` .
 
 #### `html`
 
