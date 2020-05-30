@@ -178,13 +178,13 @@ Optional:
 | [html](#html) | Configuration of html file |
 | [clearConsole](#clearConsole) | Compile clear console |
 
-#### `entry`
+#### entry
 
 Specify the entry of the program, same as [`webpack.entry`](https://www.webpackjs.com/configuration/entry-context/#entry)
 
 Default as: `<projectPath>/index` .
 
-#### `resolveExtraExtensions`
+#### resolveExtraExtensions
 
 Specifies additional extensions that can be omitted.
 
@@ -198,7 +198,7 @@ module.exports = {
 
 By default, `[".js", ".ts", ".jsx", ".tsx"]` is preset, and it is unnecessary to specify it again.
 
-#### `extraAlias`
+#### extraAlias
 
 Specify additional path aliases.
 
@@ -215,13 +215,13 @@ module.exports = {
 
 `{ "@": "src" }` is preset by default.
 
-#### `outputPath`
+#### outputPath
 
 Specifies the path to package the output file, same as [`webpack.output.path`](https://webpack.js.org/configuration/output/#outputpath).
 
 Default as: `<projectPath>/dist` .
 
-#### `disableHash`
+#### disableHash
 
 By default, `hash` is enabled for packed files. If you need to disable it, set this to `true`.
 
@@ -233,7 +233,7 @@ module.exports = {
 };
 ```
 
-#### `publicPath`
+#### publicPath
 
 The path of the public resource of the packed file generally does not need to be set. If there are special requirements, you can specify it.
 
@@ -247,23 +247,23 @@ module.exports = {
 
 Default as `/` .
 
-#### `externals`
+#### externals
 
 Prevent bundling of certain imported packages and instead retrieve these external dependencies at runtime.
 
 Same as [`webpack.externals`](https://webpack.js.org/configuration/externals/#externals).
 
-#### `devtool`
+#### devtool
 
 Choose a style of `sourceMap`, same as [`webpack.devtool`](https://webpack.js.org/configuration/devtool/#devtool).
 
 Default as: `eval-source-map` .
 
-#### `html`
+#### html
 
 html
 
-#### `clearConsole`
+#### clearConsole
 
 clearConsole
 
