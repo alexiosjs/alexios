@@ -40,7 +40,10 @@ export const resolve = () => {
     // 文件夹主文件名
     mainFiles: ["index"],
     // 设置别名
-    alias: getRcConfig("alias") || {},
+    alias: {
+      "@": "src",
+      ...(getRcConfig("extraAlias") || {}),
+    },
   };
 };
 

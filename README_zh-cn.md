@@ -1,8 +1,6 @@
 # Alexios
 
-![NPM_VERSION](https://img.shields.io/npm/v/alexios.svg?style=flat)
-![LICENSE](https://img.shields.io/github/license/alexiosjs/alexios)
-![Build Status](https://www.travis-ci.org/alexiosjs/alexios.svg?branch=master&style=flat-square)
+![NPM_VERSION](https://img.shields.io/npm/v/alexios.svg?style=flat) ![LICENSE](https://img.shields.io/github/license/alexiosjs/alexios) ![Build Status](https://www.travis-ci.org/alexiosjs/alexios.svg?branch=master&style=flat-square)
 
 基于 `Webpack` 和 `babel` 的零配置、强大的轻量化 `React` 脚手架。
 
@@ -171,7 +169,7 @@ module.exports = {
 | ------------------------------------------------- | -------------------- |
 | [entry](#entry)                                   | 项目入口             |
 | [resolveExtraExtensions](#resolveExtraExtensions) | 额外支持省略的拓展名 |
-| [alias](#alias)                                   | 设置路径别名         |
+| [extraAlias](#extraAlias)                         | 设置路径别名         |
 | [outputPath](#outputPath)                         | 打包输出路径         |
 | [disableHash](#disableHash)                       | 禁用打包的 Hash      |
 | [publicPath](#publicPath)                         | 公共资源路径         |
@@ -182,35 +180,86 @@ module.exports = {
 
 #### `entry`
 
-entry
+指定程序运行的入口，同 [`webpack.entry`](https://www.webpackjs.com/configuration/entry-context/#entry)
+
+默认为: `<项目根路径>/index`。
 
 #### `resolveExtraExtensions`
 
+指定额外可省略的拓展名。
+
+如：
+
+```javascript
+module.exports = {
+  resolveExtraExtensions: [".json", ".png"],
+};
+```
+
+默认预置了 `[".js", ".ts", ".jsx", ".tsx"]`，不必再次指定。
+
 resolveExtraExtensions
 
-#### `alias`
+#### `extraAlias`
 
-alias
+指定额外的路径别名。
+
+如：
+
+```javascript
+module.exports = {
+  extraAlias: {
+    "@component": "src/component",
+    "@utils": "src/utils",
+  },
+};
+```
+
+默认预置了 `{ "@": "src" }`。
 
 #### `outputPath`
 
-outputPath
+指定打包输出文件的路径，同 [`webpack.output.path`](https://webpack.js.org/configuration/output/#outputpath)。
+
+默认为： `<项目根路径>/dist` 。
 
 #### `disableHash`
 
-disableHash
+默认为打包后的文件开启 `hash`，如果需要禁用，设置该项为 `true`。
+
+如：
+
+```javascript
+module.exports = {
+  disableHash: true,
+};
+```
 
 #### `publicPath`
 
-publicPath
+打包后文件的公共资源路径，一般不需要设置，如果有特殊需求，可以指定。
+
+如：
+
+```js
+module.exports = {
+  publicPath: "/a",
+};
+```
+
+默认为 `/` 。
 
 #### `externals`
 
-externals
+防止将某些 import 的包(package)打包到 bundle 中，而是在运行时(runtime)再去从外部获取这些扩展依赖。
+
+同[`webpack.externals`](https://webpack.js.org/configuration/externals/#externals)。
 
 #### `devtool`
 
-devtool
+设置 `sourceMap` 的风格，同[`webpack.devtool`](https://webpack.js.org/configuration/devtool/#devtool)。
+
+默认为：`eval-source-map` 。
 
 #### `html`
 
