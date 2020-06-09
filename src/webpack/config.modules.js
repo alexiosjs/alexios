@@ -275,7 +275,7 @@ export const commonPlugins = () => {
         getRcConfig("htmlTemplate") || path.resolve(__dirname, "../index.html"),
       filename: "index.html",
       inject: true,
-      title: getRcConfig("title") || "Tiga App",
+      title: getRcConfig("title") || "Alexios App",
       favicon: getRcConfig("favicon") || projectPath("public/favicon.ico"),
     }),
     new CopyWebpackPlugin({
@@ -320,16 +320,12 @@ export const devPlugins = conf => {
           `Your application is running at: \n\n\t${chalk.cyan(
             `Local: http://127.0.0.1:${conf.port}`
           )}\n${newworkAddress}`,
-          `Currently on development mode, to build your application, use \`hv-tiga build\`\n`,
+          `Currently on development mode, to build your application, use \`hv-alexios build\`\n`,
         ],
         notes: [],
       },
       clearConsole: true,
     }),
-    // new NodemonPlugin({
-    //   // @ts-ignore
-    //   watch: projectPath(".tigarc.js"),
-    // }),
   ];
 };
 

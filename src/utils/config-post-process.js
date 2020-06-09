@@ -3,11 +3,11 @@ import projectPath from "./project-path";
 import chalk from "chalk";
 
 const postProcess = config => {
-  const processFilePath = projectPath(".tiga.config.js");
+  const processFilePath = projectPath(".alexios.config.js");
   if (fs.existsSync(processFilePath)) {
     console.log(
       chalk.yellowBright(
-        `.tiga.config.js is not recommended, use .tigarc.js instead of it.\n`
+        `.alexios.config.js is not recommended, use .alexiosrc.js instead of it.\n`
       )
     );
     const pp = require(processFilePath);

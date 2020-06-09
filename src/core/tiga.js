@@ -4,7 +4,7 @@ import commands from "../commands";
 
 const { log } = console;
 
-const tiga = () => {
+const core = () => {
   return yargs
     .command("dev", "Start the development server.", async ({ argv }) => {
       log(chalk.cyan("Starting the development server...\n"));
@@ -26,4 +26,4 @@ const tiga = () => {
     }).argv;
 };
 
-export default tiga();
+export default core();

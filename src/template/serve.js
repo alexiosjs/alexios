@@ -1,18 +1,17 @@
 // @ts-nocheck
-
-window.removeHcTigaServeWarning = function () {
+window.removeHcServeWarning = function () {
   document
     .getElementsByTagName("html")[0]
     .removeChild(
-      document.getElementsByClassName("cpp-hv-tiga-serve-warning")[0]
+      document.getElementsByClassName("cpp-hv-alexios-serve-warning")[0]
     );
 };
 
 var a = document.createElement("div");
 
 a.innerHTML =
-  '\n  Currently in serve mode, just for local validation, do not use this in production.\n  <span style="cursor: pointer; float: right; margin-right: 100px; font-size: 15px" onclick="removeHcTigaServeWarning()">X</span>\n';
-a.className = "cpp-hv-tiga-serve-warning";
+  '\n  Currently in serve mode, just for local validation, do not use this in production.\n  <span style="cursor: pointer; float: right; margin-right: 100px; font-size: 15px" onclick="removeHcServeWarning()">X</span>\n';
+a.className = "cpp-hv-alexios-serve-warning";
 a.style.width = "100%";
 a.style.height = "50px";
 a.style.backgroundColor = "pink";
