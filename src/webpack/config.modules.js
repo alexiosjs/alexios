@@ -320,7 +320,7 @@ export const devPlugins = conf => {
           `Your application is running at: \n\n\t${chalk.cyan(
             `Local: http://127.0.0.1:${conf.port}`
           )}\n${newworkAddress}`,
-          `Currently on development mode, to build your application, use \`hv-alexios build\`\n`,
+          `Currently on development mode, to build your application, use \`alexios build\`\n`,
         ],
         notes: [],
       },

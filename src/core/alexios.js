@@ -4,20 +4,26 @@ import commands from "../commands";
 
 const { log } = console;
 
-const alexios = () => {
+const core = () => {
   return yargs
     .command("dev", "Start the development server.", async ({ argv }) => {
       log(chalk.cyan("Starting the development server...\n"));
       process.env.NODE_ENV = "development";
       await commands.dev(argv);
     })
-    .command("build", "Package your application.", async () => {
-      log(chalk.cyan("Building the application...\n"));
+    .command("build", "Package your application.", async ({ argv }) => {
+      log(chalk.cyan("Packaging your application...\n"));
       process.env.NODE_ENV = "production";
+      await commands.build(argv);
     })
-    .command("watch", "Watch your file system change.", async () => {
-      log(chalk.cyan("Watch your file system change...\n"));
+    .command("serve", "Verify your packaged files.", async () => {
+      log(
+        chalk.yellow(
+          "Just for local validation, do not use this in production...\n"
+        )
+      );
+      await commands.serve();
     }).argv;
 };
 
-export default alexios();
+export default core();

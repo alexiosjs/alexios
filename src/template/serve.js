@@ -1,4 +1,5 @@
 // @ts-nocheck
+
 window.removeHcServeWarning = function () {
   document
     .getElementsByTagName("html")[0]
