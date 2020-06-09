@@ -1,8 +1,8 @@
-import webpack from "webpack";
-import WebpackDevServer from "webpack-dev-server";
 import chalk from "chalk";
 import portUsage from "../utils/port-usage";
-import { webpackDev } from "../webpack/main";
+import webpack from "webpack";
+import WDS from "webpack-dev-server";
+import devConfigGen from "../webpack/main/dev-config.gen";
 
 /**
  * 检查端口情况，返回空闲端口
@@ -31,22 +31,29 @@ const portCheck = async port => {
 
 export default async argv => {
   const {
-    /** 端口号 */
+    /** 默认端口号 */
     port = 3000,
     /** 是否打开浏览器 */
     open = false,
+    /** 是否mock */
+    mock,
+    /** 兼容ie */
+    ie,
   } = argv;
 
   const EMPTY_PORT = await portCheck(port);
 
-  const webpackDevConfig = webpackDev({
+  const webpackDevConfig = devConfigGen({
     port: Number(EMPTY_PORT),
     open: open === "true",
+    mock: mock === "false" ? false : true,
+    ie: Number(ie),
   });
 
   const compiler = webpack(webpackDevConfig);
 
-  const devServer = new WebpackDevServer(compiler, {
+  // @ts-ignore
+  const devServer = new WDS(compiler, {
     ...webpackDevConfig.devServer,
   });
 
