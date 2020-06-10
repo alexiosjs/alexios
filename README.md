@@ -107,7 +107,7 @@ ReactDOM.render(<App />, document.getElementById("root"));
 
 ## Commands
 
-#### `alexios dev`
+#### alexios dev
 
 Start the development server.
 
@@ -121,7 +121,7 @@ Optional params:
 > alexios dev --open=true
 ```
 
-#### `alexios build`
+#### alexios build
 
 Build your application.
 
@@ -132,7 +132,7 @@ Optional params:
 > alexios build --analyze=true
 ```
 
-#### `alexios watch`
+#### alexios watch
 
 Watch your file or folder changes, directly to you custom commands or restart the devServer.
 

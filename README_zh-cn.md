@@ -107,7 +107,7 @@ ReactDOM.render(<App />, document.getElementById("root"));
 
 ## 指令
 
-#### `alexios dev`
+#### alexios dev
 
 启动开发服务器。
 
@@ -121,7 +121,7 @@ ReactDOM.render(<App />, document.getElementById("root"));
 > alexios dev --open=true
 ```
 
-#### `alexios build`
+#### alexios build
 
 打包项目。
 
@@ -132,7 +132,7 @@ ReactDOM.render(<App />, document.getElementById("root"));
 > alexios build --analyze=true
 ```
 
-#### `alexios watch`
+#### alexios watch
 
 监听文件或文件夹的改动, 执行自定义的指令或重启开发服务器。
 
