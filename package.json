@@ -11,6 +11,13 @@
     "commit": "git-cz",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
   },
+  "files": [
+    "package.json",
+    "package-lock.json",
+    "LICENSE",
+    "lib",
+    "bin"
+  ],
   "bin": "./bin/alexios.js",
   "repository": {
     "type": "git",
