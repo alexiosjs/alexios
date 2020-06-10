@@ -1,8 +1,8 @@
 ---
-title: AlexiosJS - 基于 Webpack 和 Babel 的轻量化、零配置、开箱即用的企业级 React 脚手架
+title: AlexiosJS - 轻量化、零配置、开箱即用的企业级 React 脚手架
 hero:
   title: AlexiosJS
-  desc: 🐦基于 Webpack 和 Babel 的轻量化、零配置、开箱即用的企业级 React 脚手架 <br/><br/> ![NPM_VERSION](https://img.shields.io/npm/v/alexios.svg?style=flat) ![LICENSE](https://img.shields.io/github/license/alexiosjs/alexios) ![Build Status](https://www.travis-ci.org/alexiosjs/alexios.svg?branch=master&style=flat-square)
+  desc: 🐦 轻量化、零配置、开箱即用的企业级 React 脚手架 <br/><br/> ![NPM_VERSION](https://img.shields.io/npm/v/alexios.svg?style=flat) ![LICENSE](https://img.shields.io/github/license/alexiosjs/alexios) ![Build Status](https://www.travis-ci.org/alexiosjs/alexios.svg?branch=master&style=flat-square)
   actions:
     - text: 快速开始
       link: /quick-start
@@ -51,3 +51,5 @@ ReactDOM.render(<App />, document.getElementById("root"));
 ```bash
 > npx alexios dev
 ```
+
+<div style="text-align: center;"><img style="width: 220px;" src="https://alexiosjs.github.io/alexios/logo-text.png" /></div>
