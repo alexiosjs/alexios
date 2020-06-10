@@ -13,6 +13,10 @@ const config = {
         path: "/config",
       },
       { title: "GitHub", path: "https://github.com/alexiosjs/alexios" },
+      {
+        title: "Change Log",
+        path: "https://github.com/alexiosjs/alexios/releases",
+      },
     ],
     "zh-CN": [
       {
@@ -24,6 +28,10 @@ const config = {
         path: "/zh-CN/config",
       },
       { title: "GitHub", path: "https://github.com/alexiosjs/alexios" },
+      {
+        title: "更新日志",
+        path: "https://github.com/alexiosjs/alexios/releases",
+      },
     ],
   },
   base: "/alexios/",

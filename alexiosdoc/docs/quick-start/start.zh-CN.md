@@ -41,7 +41,7 @@ ReactDOM.render(<App />, document.getElementById("root")); // html中默认存�
 
 打包完成，生成的文件默认在 <b>/dist</b> 目录下。
 
-## <strong>静态服务器验证</strong>
+## <strong>本地验证</strong>
 
 如果你想在项目打包，发布到线上之前在本地先验证一下，以前通常的做法是本地配置一个 nginx 服务等手段。现在你只需要使用 `serve` 指令，即可快速启动一个静态服务器，接口使用的代理和开发环境完全一致：
 
