@@ -8,16 +8,16 @@ import projectPath from "./project-path";
  * @return 配置项或全体配置
  */
 const getRcConfig = name => {
-  const rcFilePath = projectPath(".alexiosrc.js");
-  // rc文件是否存在
-  const RC_EXSIST = fs.pathExistsSync(rcFilePath);
-  // 如果存在
+  const rcPath = projectPath(".alexiosrc.js");
+
+  const RC_EXSIST = fs.pathExistsSync(rcPath);
+
   if (RC_EXSIST) {
-    const rcConfig = require(rcFilePath);
-    // config / undefiend
+    const rcConfig = require(rcPath);
+
     return name ? rcConfig[name] : rcConfig;
   }
-  // 不存在
+
   return undefined;
 };
 
