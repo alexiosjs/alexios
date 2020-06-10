@@ -1,7 +1,7 @@
 export default {
   mode: "site",
-  title: "alexios",
-  logo: "/logo.png",
+  title: "AlexiosJS",
+  logo: "https://alexiosjs.github.io/alexios/logo.png",
   navs: [
     {
       title: "快速开始",
