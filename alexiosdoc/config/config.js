@@ -1,4 +1,4 @@
-export default {
+const config = {
   mode: "site",
   title: "AlexiosJS",
   logo: "https://alexiosjs.github.io/alexios/logo.png",
@@ -17,3 +17,9 @@ export default {
   publicPath: "/alexios/",
   exportStatic: {},
 };
+
+if (process.env.NODE_ENV === "production") {
+  config.dynamicImport = {};
+}
+
+export default config;
