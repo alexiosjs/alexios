@@ -1,5 +1,6 @@
 import path from "path";
-import os from "os";
+// import os from "os";
+import fs from "fs-extra";
 import HappyPack from "happypack";
 import webpack from "webpack";
 import chalk from "chalk";
@@ -47,7 +48,7 @@ export const entry = ({ ie }) => {
     };
     return r;
   } else if (typeof rcEntry === "object") {
-    delete rcEntry["vendor"];
+    delete rcEntry.vendor;
     const r = {
       main: [...polyfill, projectPath("index")],
       ...rcEntry.map(e => [...polyfill, ...e]),
@@ -276,16 +277,25 @@ export const commonPlugins = () => {
       filename: "index.html",
       inject: true,
       title: getRcConfig("title") || "Alexios App",
-      favicon: getRcConfig("favicon") || projectPath("public/favicon.ico"),
+      favicon:
+        getRcConfig("favicon") ||
+        (fs.existsSync(projectPath("public/favicon.ico"))
+          ? projectPath("public/favicon.ico")
+          : undefined),
     }),
-    new CopyWebpackPlugin({
-      patterns: [
-        {
-          from: projectPath("public"),
-          to: "./",
-        },
-      ],
-    }),
+    ...(fs.existsSync(projectPath("public"))
+      ? [
+          new CopyWebpackPlugin({
+            patterns: [
+              {
+                from: projectPath("public"),
+                to: "./",
+                noErrorOnMissing: true,
+              },
+            ],
+          }),
+        ]
+      : []),
     new webpack.DefinePlugin({
       ...tarDefine,
     }),

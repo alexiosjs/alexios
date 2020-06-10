@@ -1,8 +1,7 @@
 {
   "name": "alexios",
-  "version": "0.0.1-alpha",
+  "version": "1.0.3",
   "description": "A lightweight, powerful and zero-configuration React cli based on Webpack and babel.",
-  "main": "lib/modules/index.js",
   "scripts": {
     "lib": "babel ./src -d ./lib --copy-files",
     "start": "watch \"npm run lib\" src --wait=2",
@@ -11,6 +10,13 @@
     "commit": "git-cz",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
   },
+  "files": [
+    "package.json",
+    "package-lock.json",
+    "LICENSE",
+    "lib",
+    "bin"
+  ],
   "bin": "./bin/alexios.js",
   "repository": {
     "type": "git",
