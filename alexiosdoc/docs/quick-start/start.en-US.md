@@ -41,7 +41,7 @@ Build command line:
 
 Accomplish, default in directory <b>/dist</b>.
 
-## <strong>Static Server</strong>
+## <strong>Local Verification</strong>
 
 If you want to package the project, verify it locally before publishing it online. The usual practice in the past was to configure an nginx service locally and other means。Now you only need to use the `serve` command to quickly start a static server. The proxy used by the interface is exactly the same as the development environment:
 
