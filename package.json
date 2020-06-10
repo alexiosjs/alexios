@@ -1,6 +1,6 @@
 {
   "name": "alexios",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A lightweight, powerful and zero-configuration React cli based on Webpack and babel.",
   "main": "lib/modules/index.js",
   "scripts": {

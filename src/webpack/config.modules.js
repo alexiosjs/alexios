@@ -290,6 +290,7 @@ export const commonPlugins = () => {
               {
                 from: projectPath("public"),
                 to: "./",
+                noErrorOnMissing: true,
               },
             ],
           }),
