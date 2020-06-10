@@ -13,7 +13,7 @@ export default {
     },
     { title: "GitHub", path: "https://github.com/alexiosjs/alexios" },
   ],
-  base: "/alexiosjs/alexios",
-  publicPath: "/alexiosjs/alexios/",
+  base: "/alexios/",
+  publicPath: "/alexios/",
   exportStatic: {},
 };
