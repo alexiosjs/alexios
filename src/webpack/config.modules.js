@@ -183,6 +183,9 @@ export const module = env => {
   const SCSS_LOADER = [
     {
       loader: "sass-loader",
+      options: {
+        implementation: require("sass"),
+      },
     },
     {
       loader: "@epegzz/sass-vars-loader",
