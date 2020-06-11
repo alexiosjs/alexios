@@ -1,6 +1,6 @@
 {
   "name": "alexios",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A lightweight, powerful and zero-configuration React cli based on Webpack and babel.",
   "scripts": {
     "lib": "babel ./src -d ./lib --copy-files",
@@ -97,6 +97,7 @@
     "git-cz": "^4.3.1",
     "husky": "^4.2.5",
     "lint-staged": "^10.1.7",
-    "prettier": "^2.0.5"
+    "prettier": "^2.0.5",
+    "standard-version": "^8.0.0"
   }
 }
