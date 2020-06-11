@@ -1,9 +1,10 @@
 ---
-title: Start
 group:
   title: Introduction
 # translateHelp: true
 ---
+
+# <strong>Start</strong>
 
 ## <strong>Launch Your First App</strong>
 

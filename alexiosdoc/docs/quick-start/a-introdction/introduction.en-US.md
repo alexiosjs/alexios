@@ -1,9 +1,10 @@
 ---
-title: Introduction
 group:
   title: Introduction
 # translateHelp: true
 ---
+
+# <strong>Introduction</strong>
 
 ## <strong>Development Intention</strong>
 
@@ -17,6 +18,7 @@ The purpose is to develop a <b>Launcher + Packager</b> which configuration are e
 - 📟 The JSON-like mock data structure supports custom mock logic, hot swapping intercepts interface requests.
 - 📝 CSS Modules that support css, less, sass, scss, and stylus are automatically enabled according to the import method without configuration.
 - 🧱 Based on react-app-polyfill, only one configuration is required, and it can be quickly compatible with IE9, and quickly opened with the command line.
+- 👕 TypeScript supported.
 
 ## <strong>Environment</strong>
 
