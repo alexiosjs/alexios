@@ -6,10 +6,10 @@ const { log } = console;
 
 const core = () => {
   return yargs
-    .command("dev", "Start the development server.", async ({ argv }) => {
+    .command("dev", "Start the development server.", () => {
       log(chalk.cyan("Starting the development server...\n"));
       process.env.NODE_ENV = "development";
-      await commands.dev(argv);
+      require("../scripts/start.js").default();
     })
     .command("build", "Package your application.", async ({ argv }) => {
       log(chalk.cyan("Packaging your application...\n"));
