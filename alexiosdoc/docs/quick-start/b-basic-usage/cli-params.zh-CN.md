@@ -11,7 +11,7 @@ order: 0
 
 ## <strong>dev</strong>
 
-- <b>--port</b>:
+- <b>--port</b>
 
   自定义端口号，默认 `3000`。
 

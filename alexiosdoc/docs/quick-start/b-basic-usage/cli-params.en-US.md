@@ -11,7 +11,7 @@ Contains three commands: <strong>dev</strong>, <strong>build</strong>, and <stro
 
 ## <strong>dev</strong>
 
-- <b>--port</b>:
+- <b>--port</b>
 
   Custom port number, default `3000`.
 
