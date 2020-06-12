@@ -58,3 +58,11 @@ strong {
   > a::after {
   width: 8px !important;
 }
+
+.markdown table th {
+  background-color: rgba(255, 114, 118, 0.06) !important;
+}
+
+.markdown table tr:nth-child(even) {
+  background-color: rgba(255, 114, 118, 0.03) !important;
+}
