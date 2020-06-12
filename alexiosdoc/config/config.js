@@ -34,7 +34,7 @@ const config = {
       },
     ],
   },
-  // base: "/alexios/",
+  base: "/alexios/",
   publicPath: "/alexios/",
   exportStatic: {},
   theme: {
