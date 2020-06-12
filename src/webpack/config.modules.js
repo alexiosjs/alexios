@@ -165,7 +165,13 @@ export const module = env => {
     {
       loader: "css-loader",
       options: {
-        modules: true,
+        modules: {
+          mode: "local",
+          exportGlobals: true,
+          localIdentName:
+            env === "development" ? "[path][name]__[local]" : "[hash:base64]",
+        },
+        localsConvention: "dashesOnly",
       },
     },
   ];
