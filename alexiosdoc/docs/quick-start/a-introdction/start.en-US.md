@@ -14,7 +14,7 @@ Install dev dependencies:
 > npm install alexios react react-dom -D
 ```
 
-Write the entry file, read <b>src/index</b> by default, the extension can be one of <b>js、jsx、tsx</b>:
+Write the entry file, read <strong>src/index</strong> by default, the extension can be one of <strong>js、jsx、tsx</strong>:
 
 ```js
 import React from "react";
@@ -30,7 +30,7 @@ launch command line:
 > npx alexios dev
 ```
 
-Accomplish, visit <b>localhost://3000</b>.
+Accomplish, visit <strong>localhost://3000</strong>.
 
 ## <strong>Package Your App</strong>
 
@@ -40,11 +40,11 @@ Build command line:
 > npx alexios build
 ```
 
-Accomplish, default in directory <b>/dist</b>.
+Accomplish, default in directory <strong>/dist</strong>.
 
 ## <strong>Local Verification</strong>
 
-If you want to package the project, verify it locally before publishing it online. The usual practice in the past was to configure an nginx service locally and other means。Now you only need to use the `serve` command to quickly start a static server. The proxy used by the interface is exactly the same as the development environment:
+If you want to package the project, verify it locally before publishing it online. The usual practice in the past was to configure an nginx service locally and other means。Now you only need to use the <strong>serve</strong> command to quickly start a static server. The proxy used by the interface is exactly the same as the development environment:
 
 ```bash
 > npx run serve
