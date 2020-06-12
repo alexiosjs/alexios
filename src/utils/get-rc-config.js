@@ -13,7 +13,7 @@ const getRcConfig = name => {
   const RC_EXSIST = fs.pathExistsSync(rcPath);
 
   if (RC_EXSIST) {
-    const rcConfig = require(rcPath);
+    const rcConfig = require.resolve(rcPath);
 
     return name ? rcConfig[name] : rcConfig;
   }
