@@ -1,3 +1,10 @@
+## 1.0.6 (2020-06-24)
+
+### Bug Fixes
+
+- 修复监听配置文件变动自动重启后命令行参数失效的问题 ([320fa8a](https://github.com/alexiosjs/alexios/commit/320fa8a6851376cedc315cf26cb8f1620711ac62))
+- 使用 node-sass 代替 dart-sass，防止 mac 的兼容性问题 ([3d3e20f](https://github.com/alexiosjs/alexios/commit/3d3e20fe15a2da08ced54b3140badddba1faca44))
+
 ## 1.0.5 (2020-06-22)
 
 ### Bug Fixes

@@ -1,3 +1,10 @@
+## 1.0.6 (2020-06-24)
+
+### Bug Fixes
+
+- Fix the problem of invalid command line parameters after automatic restart of listening profile changes ([320fa8a](https://github.com/alexiosjs/alexios/commit/320fa8a6851376cedc315cf26cb8f1620711ac62))
+- Use node-sass instead of dart-sass, prevent MAC compatibility problems ([3d3e20f](https://github.com/alexiosjs/alexios/commit/3d3e20fe15a2da08ced54b3140badddba1faca44))
+
 ## 1.0.5 (2020-06-22)
 
 ### Bug Fixes
