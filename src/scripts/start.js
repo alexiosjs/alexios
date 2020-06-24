@@ -1,11 +1,13 @@
 import { fork } from "child_process";
 
-export default () => {
-  const args = process.argv.slice(3);
-
-  const devProcess = fork(require.resolve("./dev.js"), args, {
-    stdio: "inherit",
-  });
+export default argv => {
+  const devProcess = fork(
+    require.resolve("./dev.js"),
+    Object.keys(argv).map(k => `--${k}=${argv[k]}`),
+    {
+      stdio: "inherit",
+    }
+  );
 
   devProcess.once("exit", code => {
     process.exit(code);

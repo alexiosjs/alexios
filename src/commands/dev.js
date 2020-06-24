@@ -75,7 +75,7 @@ export default async argv => {
     devServer.close();
     process.send("SIGINT");
     console.log(logStr);
-    require("../scripts/start.js").default();
+    require("../scripts/start.js").default(argv);
   };
 
   rcWatcher.on("change", () => {
