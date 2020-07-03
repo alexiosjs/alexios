@@ -1,21 +1,18 @@
 ---
-group:
-  title: 基本用法
 order: 1
-# translateHelp: true
 ---
 
-# <strong>CSS-Modules</strong>
+# CSS-Modules
 
-支持 <strong>css</strong>， <strong>less</strong>， <strong>scss</strong> 三种格式，不需要手动设置，会自动识别引入的方式来自动开启。
+支持 `css`，`less`，`scss` 三种格式，不需要手动设置，会自动识别引入的方式来自动开启。
 
-## <strong>常规方式</strong>
+## 常规方式
 
 ```js
 import "./index.less";
 ```
 
-## <strong>CSS-Modules 方式</strong>
+## CSS-Modules 方式
 
 ```js
 import styles from "./index.less";
@@ -31,6 +28,6 @@ import styles from "./index.less";
 }
 ```
 
-## <strong>注意</strong>
+## 注意
 
 开启 CSS-Modules 之后的 className 在开发环境下是可读的，但在生产环境下会强制转换为 hash64。

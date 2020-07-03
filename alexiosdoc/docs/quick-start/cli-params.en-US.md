@@ -1,15 +1,12 @@
 ---
-group:
-  title: Basic Usage
-order: 0
-# translateHelp: true
+order: 1
 ---
 
 # Command Line Params
 
-Contains three commands: <strong>dev</strong>, <strong>build</strong>, and <strong>serve</strong>. There are some command line parameters to quickly set certain functions.
+Contains three commands: `dev`, `build`, and `serve`. There are some command line parameters to quickly set certain functions.
 
-## <strong>dev</strong>
+## dev
 
 - <b>--port</b>
 
@@ -27,7 +24,7 @@ Contains three commands: <strong>dev</strong>, <strong>build</strong>, and <stro
 
   The lowest compatible ie version, not compatible by default. Supports `9` and `11`. For example: setting `--ie=9` will automatically import the corresponding polyfill at all entrances.
 
-## <strong>build</strong>
+## build
 
 - <b>--ie</b>
 
@@ -37,6 +34,6 @@ Contains three commands: <strong>dev</strong>, <strong>build</strong>, and <stro
 
   Whether to display the product analysis page. Use it carefully for automated deployment, will start a server to block the current process. The default is `false`.
 
-## <strong>serve</strong>
+## serve
 
 - Nothing.
