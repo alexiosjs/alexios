@@ -43,16 +43,25 @@ export const entry = ({ ie }) => {
   }
 
   if (typeof rcEntry === "string") {
+    // 单入口
     const r = {
       main: [...polyfill, rcEntry || projectPath("src/index")],
     };
     return r;
   } else if (typeof rcEntry === "object") {
+    // 多入口
     delete rcEntry.vendor;
-    const r = {
-      main: [...polyfill, projectPath("index")],
-      ...rcEntry.map(e => [...polyfill, ...e]),
-    };
+    console.log(chalk.greenBright(`Multiple entry found:\n`));
+    const r = {};
+    Object.keys(rcEntry).forEach(key => {
+      console.log(
+        `\t${path.relative(
+          projectPath("./"),
+          projectPath(rcEntry[key])
+        )} --> <hash>/${key}.html\n`
+      );
+      r[key] = [...polyfill, projectPath(rcEntry[key])];
+    });
     return r;
   }
 };
@@ -81,8 +90,8 @@ export const output = () => {
     path: getRcConfig("outputPath") || projectPath("dist"),
     filename:
       getRcConfig("disableHash") === true
-        ? `bundle.js`
-        : `bundle_[hash:${getRcConfig("hashLength") || 8}].js`,
+        ? `[name].js`
+        : `[name]_[hash:${getRcConfig("hashLength") || 8}].js`,
     chunkFilename:
       getRcConfig("disableHash") === true
         ? `[name].js`
@@ -270,6 +279,62 @@ export const module = env => {
   };
 };
 
+const getHtmlPlugin = () => {
+  const rcEntry = getRcConfig("entry") || "";
+  const rcTitle = getRcConfig("title") || "";
+  const rcHtmlTemplate = getRcConfig("htmlTemplate") || "";
+  const rcFavicon = getRcConfig("favicon") || "";
+  const IS_MULTIPLE_ENTRY = typeof rcEntry === "object";
+  if (!IS_MULTIPLE_ENTRY) {
+    // 单入口
+    return [
+      new HtmlPlugin({
+        template:
+          getRcConfig("htmlTemplate") ||
+          path.resolve(__dirname, "../index.html"),
+        filename: "index.html",
+        inject: true,
+        title: getRcConfig("title") || "Alexios App",
+        favicon:
+          getRcConfig("favicon") ||
+          (fs.existsSync(projectPath("public/favicon.ico"))
+            ? projectPath("public/favicon.ico")
+            : undefined),
+      }),
+    ];
+  } else {
+    const res = [];
+    Object.keys(rcEntry).forEach(key => {
+      res.push(
+        new HtmlPlugin({
+          template:
+            typeof rcHtmlTemplate === "string"
+              ? rcHtmlTemplate
+              : rcHtmlTemplate[key] || path.resolve(__dirname, "../index.html"),
+          filename: `${key}.html`,
+          inject: true,
+          title:
+            typeof rcTitle === "string"
+              ? rcTitle
+              : rcTitle[key] || "Alexios App",
+          favicon:
+            typeof rcFavicon === "string"
+              ? rcFavicon ||
+                (fs.existsSync(projectPath("public/favicon.ico"))
+                  ? projectPath("public/favicon.ico")
+                  : undefined)
+              : rcFavicon[key] ||
+                (fs.existsSync(projectPath("public/favicon.ico"))
+                  ? projectPath("public/favicon.ico")
+                  : undefined),
+          chunks: [`${key}`],
+        })
+      );
+    });
+    return res;
+  }
+};
+
 export const commonPlugins = () => {
   const define = getRcConfig("define") || {};
   const tarDefine = {};
@@ -280,18 +345,7 @@ export const commonPlugins = () => {
   return [
     new ProgressBar({}),
     new webpack.HotModuleReplacementPlugin(),
-    new HtmlPlugin({
-      template:
-        getRcConfig("htmlTemplate") || path.resolve(__dirname, "../index.html"),
-      filename: "index.html",
-      inject: true,
-      title: getRcConfig("title") || "Alexios App",
-      favicon:
-        getRcConfig("favicon") ||
-        (fs.existsSync(projectPath("public/favicon.ico"))
-          ? projectPath("public/favicon.ico")
-          : undefined),
-    }),
+    ...getHtmlPlugin(),
     ...(fs.existsSync(projectPath("public"))
       ? [
           new CopyWebpackPlugin({
