@@ -11,6 +11,7 @@ import { CleanWebpackPlugin } from "clean-webpack-plugin";
 import CopyWebpackPlugin from "copy-webpack-plugin";
 import HtmlPlugin from "html-webpack-plugin";
 import ProgressBar from "webpack-progress-bar";
+import InsertScriptsWebpackPlugin from "../plugins/insert-scripts-webpack-plugin";
 import getRcConfig from "../utils/get-rc-config";
 import projectPath from "../utils/project-path";
 import babelConfig from "../babel/config";
@@ -309,7 +310,7 @@ const getHtmlPlugin = () => {
         new HtmlPlugin({
           template:
             typeof rcHtmlTemplate === "string"
-              ? rcHtmlTemplate
+              ? rcHtmlTemplate || path.resolve(__dirname, "../index.html")
               : rcHtmlTemplate[key] || path.resolve(__dirname, "../index.html"),
           filename: `${key}.html`,
           inject: true,
@@ -346,6 +347,9 @@ export const commonPlugins = () => {
     new ProgressBar({}),
     new webpack.HotModuleReplacementPlugin(),
     ...getHtmlPlugin(),
+    new InsertScriptsWebpackPlugin({
+      scripts: getRcConfig("scripts") || [],
+    }),
     ...(fs.existsSync(projectPath("public"))
       ? [
           new CopyWebpackPlugin({
