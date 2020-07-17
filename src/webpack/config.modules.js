@@ -411,8 +411,8 @@ export const buildPlugin = analysis => {
     new MiniCssExtractPlugin({
       filename:
         getRcConfig("disableHash") === true
-          ? "style/style.css"
-          : `style/style-[hash:${getRcConfig("hashLength") || 8}].css`,
+          ? "style/[name].css"
+          : `style/[name]-[hash:${getRcConfig("hashLength") || 8}].css`,
       chunkFilename:
         getRcConfig("disableHash") === true
           ? "style/[name].css"
