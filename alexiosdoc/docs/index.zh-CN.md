@@ -5,7 +5,7 @@ hero:
   desc: 🐦 轻量化、零配置、开箱即用的企业级 React 脚手架 <br/><br/> ![NPM_VERSION](https://img.shields.io/npm/v/alexios.svg?style=flat) ![LICENSE](https://img.shields.io/github/license/alexiosjs/alexios) ![Build Status](https://www.travis-ci.org/alexiosjs/alexios.svg?branch=master&style=flat-square)
   actions:
     - text: 快速开始
-      link: /quick-start
+      link: /zh-CN/quick-start/
 features:
   - icon: https://alexiosjs.github.io/alexios/outofbox.png
     title: 开箱即用

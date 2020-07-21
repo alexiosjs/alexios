@@ -137,19 +137,22 @@ export const module = env => {
   const extraBabelIncludes = getRcConfig("extraBabelIncludes") || [];
   const staticFileExtensions = Array.from(
     new Set([
-      "webp",
-      "bmp",
-      "jpg",
-      "jpeg",
-      "gif",
-      "svg",
-      "png",
-      "ico",
-      "ttf",
-      "woff",
+      ".webp",
+      ".bmp",
+      ".jpg",
+      ".jpeg",
+      ".gif",
+      ".svg",
+      ".png",
+      ".ico",
+      ".ttf",
+      ".woff",
       ...(getRcConfig("extraStaticFileExtensions") || []),
     ])
-  );
+  )
+    .map(item => item.replace(/^\./, ""))
+    .map(item => `.${item}`)
+    .map(item => item.replace(/^\./, ""));
   const staicFileExtensionsReg = new RegExp(
     `\.(${staticFileExtensions.join("|")})$`
   );
@@ -411,8 +414,8 @@ export const buildPlugin = analysis => {
     new MiniCssExtractPlugin({
       filename:
         getRcConfig("disableHash") === true
-          ? "style/style.css"
-          : `style/style-[hash:${getRcConfig("hashLength") || 8}].css`,
+          ? "style/[name].css"
+          : `style/[name]-[hash:${getRcConfig("hashLength") || 8}].css`,
       chunkFilename:
         getRcConfig("disableHash") === true
           ? "style/[name].css"

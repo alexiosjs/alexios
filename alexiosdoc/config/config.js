@@ -54,6 +54,10 @@ const config = {
           "quick-start/mock.en-US.md",
         ],
       },
+      {
+        title: "Advance Usage",
+        children: ["quick-start/multiple-entry.en-US.md"],
+      },
     ],
     "/zh-CN/quick-start": [
       {
@@ -72,6 +76,28 @@ const config = {
           "quick-start/public.zh-CN.md",
           "quick-start/typescript.zh-CN.md",
           "quick-start/mock.zh-CN.md",
+        ],
+      },
+      {
+        title: "进阶用法",
+        children: ["quick-start/multiple-entry.zh-CN.md"],
+      },
+    ],
+    "/config": [
+      {
+        title: "Config",
+        children: [
+          "config/configuration.en-US.md",
+          "config/force-rewrite.en-US.md",
+        ],
+      },
+    ],
+    "/zh-CN/config": [
+      {
+        title: "配置项",
+        children: [
+          "config/configuration.zh-CN.md",
+          "config/force-rewrite.zh-CN.md",
         ],
       },
     ],
