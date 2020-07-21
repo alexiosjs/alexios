@@ -345,7 +345,10 @@ export const commonPlugins = () => {
   Object.keys(define).forEach(k => {
     tarDefine[k] = JSON.stringify(define[k]);
   });
-
+  const rcExtraWebpackPlugins = getRcConfig("extraWebpackPlugins") || [];
+  const commonExtraWebpackPlugins = Array.isArray(rcExtraWebpackPlugins)
+    ? rcExtraWebpackPlugins
+    : [];
   return [
     new ProgressBar({}),
     new webpack.HotModuleReplacementPlugin(),
@@ -384,6 +387,7 @@ export const commonPlugins = () => {
     ...(getRcConfig("ignoreMomentLocale") === false
       ? []
       : [new webpack.IgnorePlugin(/^\.\/locale/, /moment$/)]),
+    ...commonExtraWebpackPlugins,
   ];
 };
 
@@ -392,6 +396,10 @@ export const devPlugins = conf => {
   const newworkAddress = newworkIp
     ? `\n\t${chalk.cyan(`Network: http://${newworkIp}:${conf.port}`)}\n`
     : `\n\t${chalk.cyan(`Network: Disconnected`)}\n`;
+  const rcExtraWebpackPlugins = getRcConfig("extraWebpackPlugins") || [];
+  const devExtraWebpackPlugins = Array.isArray(rcExtraWebpackPlugins)
+    ? []
+    : rcExtraWebpackPlugins["development"] || [];
 
   return [
     new FriendlyErrorsWebpackPlugin({
@@ -406,10 +414,15 @@ export const devPlugins = conf => {
       },
       clearConsole: true,
     }),
+    ...devExtraWebpackPlugins,
   ];
 };
 
 export const buildPlugin = analysis => {
+  const rcExtraWebpackPlugins = getRcConfig("extraWebpackPlugins") || [];
+  const buildExtraWebpackPlugins = Array.isArray(rcExtraWebpackPlugins)
+    ? []
+    : rcExtraWebpackPlugins["production"] || [];
   return [
     new MiniCssExtractPlugin({
       filename:
@@ -423,6 +436,7 @@ export const buildPlugin = analysis => {
       ignoreOrder: true,
     }),
     new CleanWebpackPlugin(),
+    ...buildExtraWebpackPlugins,
     ...(analysis ? [new BundleAnalyzerPlugin()] : []),
   ];
 };

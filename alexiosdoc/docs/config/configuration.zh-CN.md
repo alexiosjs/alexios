@@ -224,6 +224,32 @@ module.exports = {
 };
 ```
 
+## extraWebpackPlugins
+
+- 类型： `any[] | { [key: "development" | "production"]: any[] }`
+- 默认值：`[]`
+
+设置额外的 webpack 插件，可以统一设置，也可以分环境设置。
+
+统一设置：
+
+```js
+module.exports = {
+  extraWebpackPlugins: [new MyPlugin()],
+};
+```
+
+分环境设置：
+
+```js
+module.exports = {
+  extraWebpackPlugins: {
+    development: [new MyPlugin()],
+    production: [new MyPlugin1()],
+  },
+};
+```
+
 ## favicon
 
 - 类型： `string | { [key: string]: string }`
