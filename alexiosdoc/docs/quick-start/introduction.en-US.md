@@ -4,9 +4,9 @@ order: 0
 
 # Overview
 
-## Development Intention
+## Alexios
 
-The purpose is to develop a Launcher + Packager which configuration are extremely simple, Nextjs-like and no need to learn a lot of APIs and configuration. Friendly for beginners. Do not make any changes to the existing project structure, do not force the use of any business attributes, and do not change the development mode. Automate everything that users don’t want to care about and have no time to care about. Just focus on the business code.
+🐦 Lightweight, zero configuration, out of the box, enterprise-level React launcher
 
 ## Features
 

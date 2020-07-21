@@ -137,19 +137,22 @@ export const module = env => {
   const extraBabelIncludes = getRcConfig("extraBabelIncludes") || [];
   const staticFileExtensions = Array.from(
     new Set([
-      "webp",
-      "bmp",
-      "jpg",
-      "jpeg",
-      "gif",
-      "svg",
-      "png",
-      "ico",
-      "ttf",
-      "woff",
+      ".webp",
+      ".bmp",
+      ".jpg",
+      ".jpeg",
+      ".gif",
+      ".svg",
+      ".png",
+      ".ico",
+      ".ttf",
+      ".woff",
       ...(getRcConfig("extraStaticFileExtensions") || []),
     ])
-  );
+  )
+    .map(item => item.replace(/^\./, ""))
+    .map(item => `.${item}`)
+    .map(item => item.replace(/^\./, ""));
   const staicFileExtensionsReg = new RegExp(
     `\.(${staticFileExtensions.join("|")})$`
   );
