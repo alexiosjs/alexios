@@ -108,7 +108,7 @@ export const devServer = ({ mock }) => {
   }
   return {
     historyApiFallback: true,
-    host: "localhost", // 服务器主机号
+    host: "0.0.0.0", // 服务器主机号
     stats: "none", // 只输出错误信息就可以了
     noInfo: true,
     overlay: {

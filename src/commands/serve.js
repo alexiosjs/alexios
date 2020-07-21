@@ -26,9 +26,9 @@ export default async () => {
     devServer: {
       contentBase: outputPath,
       historyApiFallback: true,
-      host: "localhost", // 服务器主机号
+      host: "0.0.0.0", // 服务器主机号
       stats: "none", // 只输出错误信息就可以了
-      open: true,
+      open: `http://127.0.0.1:${EMPTY_PORT}`,
       noInfo: true,
       overlay: {
         // 全屏展示错误信息
