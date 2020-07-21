@@ -1,3 +1,16 @@
+## 1.0.7 (2020-07-21)
+
+### Bug Fixes
+
+- Fix the CRLF bug in bin file ([fe668a4](https://github.com/alexiosjs/alexios/commit/fe668a443232047ed32edf881d72a9b1de442b8a))
+
+### Features
+
+- Add config.scripts ([0502904](https://github.com/alexiosjs/alexios/commit/05029042306a3978fdd375e9fd60d5efe7ac841d))
+- Support extraWebpackPlugins ([b55c836](https://github.com/alexiosjs/alexios/commit/b55c8360e11fb4e230902501440d1cf5efbd9993))
+- Support multiple entry ([6389f81](https://github.com/alexiosjs/alexios/commit/6389f818dd622a4c8353cf8f2160be31bebbe2de))
+- Support visit in network ([b0c2ba8](https://github.com/alexiosjs/alexios/commit/b0c2ba882e23e67561608b52c86157e91bc9a1c5))
+
 ## 1.0.6 (2020-06-24)
 
 ### Bug Fixes
