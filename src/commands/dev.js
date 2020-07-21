@@ -47,7 +47,7 @@ export default async argv => {
 
   const webpackDevConfig = devConfigGen({
     port: Number(EMPTY_PORT),
-    open: open === "true",
+    open: open === "true" ? `http://127.0.0.1:${EMPTY_PORT}` : false,
     mock: mock !== "false",
     ie: Number(ie),
   });
