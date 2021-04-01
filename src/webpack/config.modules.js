@@ -233,10 +233,10 @@ export const module = env => {
         options: {
           limit: 8192,
           name: getRcConfig("staticFileHash")
-            ? `static/meida/[name].[hash:${
+            ? `static/meida/[name]_[contentHash:8].[hash:${
                 getRcConfig("hashLength") || 8
               }].[ext]`
-            : "static/meida/[name].[ext]",
+            : "static/meida/[name]_[contentHash:8].[ext]",
         },
       },
       // css
