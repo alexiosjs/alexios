@@ -1,3 +1,17 @@
+## 1.0.8 (2021-04-01)
+
+### Bug Fixes
+
+- Fix the problem of abnormal packaging when there are static resources with the same file name in different folders ([4a8e39b](https://github.com/alexiosjs/alexios/commit/4a8e39b253ef7c96b1847106f553b971f80960b9))
+
+### Features
+
+- Support to set define parameter in the command line ([3c679df](https://github.com/alexiosjs/alexios/commit/3c679df78f8e608183b6c895f772a89809840ec9))
+- rc and config files support custom file names ([3c679df](https://github.com/alexiosjs/alexios/commit/3c679df78f8e608183b6c895f772a89809840ec9))
+- After opening cssModule, the class name is readable in the develop environment ([3c679df](https://github.com/alexiosjs/alexios/commit/3c679df78f8e608183b6c895f772a89809840ec9))
+- After packaging, automatically clean up debugger and console ([3c679df](https://github.com/alexiosjs/alexios/commit/3c679df78f8e608183b6c895f772a89809840ec9))
+- Add object configuration mode to scripts attribute, support defer, async and other parameters ([bb4ca0b](https://github.com/alexiosjs/alexios/commit/bb4ca0b33131bb3e050adc8a49ca2884dac0181c))
+
 ## 1.0.7 (2020-07-21)
 
 ### Bug Fixes

@@ -1,3 +1,17 @@
+## 1.0.8 (2021-04-01)
+
+### Bug Fixes
+
+- 修复不同文件夹有相同文件案名的静态资源时，打包异常 ([4a8e39b](https://github.com/alexiosjs/alexios/commit/4a8e39b253ef7c96b1847106f553b971f80960b9))
+
+### Features
+
+- 支持在命令行中设置 define 参数 ([3c679df](https://github.com/alexiosjs/alexios/commit/3c679df78f8e608183b6c895f772a89809840ec9))
+- rc 和 config 文件支持自定义文件名 ([3c679df](https://github.com/alexiosjs/alexios/commit/3c679df78f8e608183b6c895f772a89809840ec9))
+- 开启 cssModule 后，develop 环境下类名可读 ([3c679df](https://github.com/alexiosjs/alexios/commit/3c679df78f8e608183b6c895f772a89809840ec9))
+- 打包之后，自动清理 debugger 和 console ([3c679df](https://github.com/alexiosjs/alexios/commit/3c679df78f8e608183b6c895f772a89809840ec9))
+- scripts 属性增加对象配置模式，支持 defer、async 等参数 ([bb4ca0b](https://github.com/alexiosjs/alexios/commit/bb4ca0b33131bb3e050adc8a49ca2884dac0181c))
+
 ## 1.0.7 (2020-07-21)
 
 ### Bug Fixes
