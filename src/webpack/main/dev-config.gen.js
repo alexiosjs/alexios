@@ -13,7 +13,7 @@ import postProcess from "../../utils/config-post-process";
  * @return {object} webapckDevConfig
  */
 const devGen = props => {
-  const { port, open, mock, ie } = props;
+  const { port, open, mock, ie, define } = props;
   // webpack.mode
   const mode = "development";
   // webpack.entry
@@ -31,7 +31,7 @@ const devGen = props => {
   // webpack.module
   const module = cm.module(mode);
   // webpack.plugins
-  const plugins = [...cm.commonPlugins(), ...cm.devPlugins({ port })];
+  const plugins = [...cm.commonPlugins({ define }), ...cm.devPlugins({ port })];
   // webpack.optimization
   const optimization = cm.optimization();
 

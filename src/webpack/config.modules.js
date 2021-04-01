@@ -5,6 +5,7 @@ import HappyPack from "happypack";
 import webpack from "webpack";
 import chalk from "chalk";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import TerserPlugin from "terser-webpack-plugin";
 import FriendlyErrorsWebpackPlugin from "friendly-errors-webpack-plugin";
 import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
 import { CleanWebpackPlugin } from "clean-webpack-plugin";
@@ -182,7 +183,9 @@ export const module = env => {
           mode: "local",
           exportGlobals: true,
           localIdentName:
-            env === "development" ? "[path][name]__[local]" : "[hash:base64]",
+            env === "development"
+              ? "[local]__[path][name]__[hash:base64]"
+              : "[hash:base64]",
         },
         localsConvention: "dashesOnly",
       },
@@ -339,8 +342,8 @@ const getHtmlPlugin = () => {
   }
 };
 
-export const commonPlugins = () => {
-  const define = getRcConfig("define") || {};
+export const commonPlugins = conf => {
+  const define = { ...(getRcConfig("define") || {}), ...(conf.define || {}) };
   const tarDefine = {};
   Object.keys(define).forEach(k => {
     tarDefine[k] = JSON.stringify(define[k]);
@@ -399,7 +402,7 @@ export const devPlugins = conf => {
   const rcExtraWebpackPlugins = getRcConfig("extraWebpackPlugins") || [];
   const devExtraWebpackPlugins = Array.isArray(rcExtraWebpackPlugins)
     ? []
-    : rcExtraWebpackPlugins["development"] || [];
+    : rcExtraWebpackPlugins.development || [];
 
   return [
     new FriendlyErrorsWebpackPlugin({
@@ -422,7 +425,7 @@ export const buildPlugin = analysis => {
   const rcExtraWebpackPlugins = getRcConfig("extraWebpackPlugins") || [];
   const buildExtraWebpackPlugins = Array.isArray(rcExtraWebpackPlugins)
     ? []
-    : rcExtraWebpackPlugins["production"] || [];
+    : rcExtraWebpackPlugins.production || [];
   return [
     new MiniCssExtractPlugin({
       filename:
@@ -466,5 +469,18 @@ export const optimization = () => {
         default: false,
       },
     },
+    minimizer:
+      process.env.NODE_ENV === "production"
+        ? [
+            new TerserPlugin({
+              terserOptions: {
+                compress: {
+                  drop_console: true,
+                  drop_debugger: true,
+                },
+              },
+            }),
+          ]
+        : undefined,
   };
 };

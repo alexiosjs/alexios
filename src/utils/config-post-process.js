@@ -1,9 +1,10 @@
 import fs from "fs-extra";
-import projectPath from "./project-path";
+import { argv } from "yargs";
 import chalk from "chalk";
+import projectPath from "./project-path";
 
 const postProcess = config => {
-  const processFilePath = projectPath(".alexios.config.js");
+  const processFilePath = projectPath(argv.config || ".alexios.config.js");
   if (fs.existsSync(processFilePath)) {
     console.log(
       chalk.yellowBright(

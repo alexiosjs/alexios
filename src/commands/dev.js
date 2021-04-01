@@ -41,6 +41,8 @@ export default async argv => {
     mock,
     /** 兼容ie */
     ie,
+    /** define */
+    define = "{}",
   } = argv;
 
   const EMPTY_PORT = await portCheck(port);
@@ -50,6 +52,7 @@ export default async argv => {
     open: open === "true" ? `http://127.0.0.1:${EMPTY_PORT}` : false,
     mock: mock !== "false",
     ie: Number(ie),
+    define: JSON.parse(define),
   });
 
   const compiler = webpack(webpackDevConfig);

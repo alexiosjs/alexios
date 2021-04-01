@@ -1,4 +1,5 @@
 import fs from "fs-extra";
+import { argv } from "yargs";
 import projectPath from "./project-path";
 
 /**
@@ -8,7 +9,7 @@ import projectPath from "./project-path";
  * @return 配置项或全体配置
  */
 const getRcConfig = name => {
-  const rcPath = projectPath(".alexiosrc.js");
+  const rcPath = projectPath(argv.rc || ".alexiosrc.js");
 
   const RC_EXSIST = fs.pathExistsSync(rcPath);
 
